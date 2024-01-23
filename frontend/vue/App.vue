@@ -20,7 +20,7 @@
   </template>
   
   <script>
-  import { socket, CredentialManager } from "../globals";
+  //import { socket, CredentialManager } from "../globals";
   
   export default {
     async mounted() {
