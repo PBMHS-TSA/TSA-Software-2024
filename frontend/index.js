@@ -1,9 +1,5 @@
-import { createApp, ref } from 'vue'
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router' // <---
 
-createApp({
-  setup() {
-    return {
-      count: ref(0)
-    }
-  }
-}).mount('#app')
+createApp(App).use(router).mount('#app')
