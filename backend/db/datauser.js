@@ -1,99 +1,97 @@
-let data = "../../Sokobot/sokobot.db"
+let data = "../../Sokobot/sokobot.db";
 let db = require("better-sqlite3")(data);
 
-class Database  {
-    __init__() {
-        // tables
-        db.exec('CREATE TABLE IF NOT EXISTS accounts (email TEXT NOT NULL, username TEXT NOT NULL, password TEXT NOT NULL)')
-        db.exec('CREATE TABLE IF NOT EXISTS forgotpassword (email TEXT NOT NULL, code TEXT NOT NULL)')
-                //db.exec('DROP TABLE messages')
+class Database {
+  __init__() {
+    // tables
+    db.exec("CREATE TABLE IF NOT EXISTS accounts (email TEXT NOT NULL, username TEXT NOT NULL, password TEXT NOT NULL)");
+    db.exec("CREATE TABLE IF NOT EXISTS forgotpassword (email TEXT NOT NULL, code TEXT NOT NULL)");
+    //db.exec('DROP TABLE messages')
+    db.exec("CREATE TABLE IF NOT EXISTS users (" + "id NUMERIC NOT NULL," + "email TEXT NOT NULL," + "username TEXT NOT NULL," + "password TEXT NOT NULL);");
+  }
+  addUser(email, username, password) {
+    let time = Date.now();
 
-        //db.exec('CREATE TABLE IF NOT EXISTS guildlogchannel (guildId VARCHAR(64) NOT NULL, channelId VARCHAR(255) NOT NULL)')
+    let stmt = db.prepare("INSERT INTO users VALUES(?,?,?,?,?,?)");
+    stmt.run(time, email, username, password, 0, time);
+
+    console.log("user " + username + " was logged");
+  }
+  getId(username) {
+    let stmt = db.prepare("SELECT * FROM users WHERE username = ?;");
+    let y = stmt.get(username);
+    if (y) {
+      return y.id;
+    } else {
+      return undefined;
     }
-    
-    
-    getUsers() {
-        let users= []
-                if (!db) console.log("r")
-        let stmt = db.prepare("SELECT * FROM userlevel;")
-        let rs = stmt.all()
-        if (!rs) return undefined
-        for (let user of rs) {
-            let uj = {
-                userId: undefined,
-                balance: 0,
-                level: 0
-            }
-            uj.balance= new Database.User().getBalance(user.userId) || 100
-            uj.level = user.level || 0
-            uj.userId=user.userId
-            
-            users.push(uj)
-        }
-        return users
-        
-        
+  }
+  getPassword(username) {
+    let stmt = db.prepare("SELECT * FROM users WHERE username = ?;");
+    let y = stmt.get(username);
+    if (y) {
+      return y.password;
+    } else {
+      return undefined;
     }
-    containsKey(key) {
-        if (!db) console.log("r")
-        let stmt = db.prepare("SELECT * FROM apikeys WHERE key = ? ;")
-        let rs = stmt.get(key)
-        if (!rs) return false
-        return true
+  }
+  getEmail(username) {
+    let stmt = db.prepare("SELECT * FROM users WHERE username = ?;");
+    let y = stmt.get(username);
+    if (y) {
+      return y.email;
+    } else {
+      return undefined;
     }
-    getUsersKeys(user) {
-        if (!db) console.log("r")
-        let stmt = db.prepare("SELECT * FROM apikeys WHERE userId=?;")
-        let rs = stmt.all(user)
-        if (!rs) return undefined
-        console.log(rs)
-        return rs
+  }
+
+  getAll() {
+    let stmt = db.prepare("SELECT * FROM users;");
+    return stmt.all();
+  }
+
+  getLastLogin(username) {
+    let stmt = db.prepare("SELECT * FROM users WHERE username = ?;");
+    let y = stmt.get(username);
+    if (y) {
+      return y.lastLogin;
+    } else {
+      return undefined;
     }
-    getKeys() {
-        if (!db) console.log("r")
-        let stmt = db.prepare("SELECT * FROM apikeys;")
-        let rs = stmt.all()
-        if (!rs) return false
-        return rs
+  }
+  isAdmin(username) {
+    let stmt = db.prepare("SELECT * FROM users WHERE username = ?;");
+    let y = stmt.get(username);
+    if (y) {
+      return y.isAdmin;
+    } else {
+      return undefined;
     }
-    createKey(name,userid,key) {
-        if (!db) console.log("r")
-        let stmt = db.prepare("INSERT INTO apikeys VALUES (?, ?, ?)")
-        stmt.run(name, userid,key)
-        return
-    }
-    deleteKey(name,userid) {
-        
-        if (!db) console.log("r")
-        let stmt = db.prepare("DELETE FROM apikeys WHERE name=? AND userId=?")
-        stmt.run(name,userid)
-        return true
-    }
-    getPrefix(id) {
-        if (!db) console.log("r")
-        let stmt = db.prepare("SELECT * FROM guildprefix WHERE guildId = ? ;")
-        let rs = stmt.get(id)
-        if (!rs) return undefined
-        return rs.prefix || "!"
-    }
-    getLogChannel(id) {
-        let stmt = db.prepare('SELECT * FROM guildlogchannel WHERE guildId = ? ;')
-        let rs = stmt.get(String(id))
-        console.log(rs)
-        if (!rs) return undefined
-        return rs.channelId || undefined
-    }
-        setPrefix(id,prefix) {
-        if (!db) console.log("r")
-        let stmt = db.prepare("UPDATE guildprefix SET prefix = ? WHERE guildId = ? ;")
-        let rs = stmt.run(String(prefix),String(id))
-    }
-    setLogChannel(id,prefix) {
-        let stmt = db.prepare('UPDATE guildlogchannel SET channelId = ? WHERE guildId = ? ;')
-        let rs = stmt.run(String(prefix),String(id))
-    }
-    removeLogChannel(id) {
-            let stmt = db.prepare('DELETE FROM guildlogchannel WHERE guildId = ?;')
-            stmt.run(id)
-    }
-} 
+  }
+  getUserFromToken(token) {
+    let idpass = token.split(".");
+    let id = decodeBase64(idpass[0]);
+    console.log(id);
+    let sql = "SELECT * FROM users WHERE id =?;";
+    let stmt = db.prepare(sql);
+    let ran = stmt.get(id);
+    if (ran.username == undefined) return;
+    console.log(ran);
+    return ran.username;
+  }
+//   setLoginTime(username) {
+//     let time = Date.now();
+//     let sql = "UPDATE users SET lastLogin = ? WHERE username =?;";
+//     let stmt = db.prepare(sql);
+//     stmt.run(time, username);
+//   }
+
+  database() {
+    return db;
+  }
+  removeUser(username) {
+    let sql = "DELETE FROM users WHERE username=?;";
+    let stmt = db.prepare(sql);
+    stmt.run(username);
+  }
+}
