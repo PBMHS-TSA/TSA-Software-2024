@@ -1,0 +1,342 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+	background-color: #5D7A60;
+}
+
+.bodytx {
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif" ;
+    text-align: center;
+	font-size: 32px;	
+	display: inline-block;
+	color: white;
+}
+
+.bodytx2 {
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif" ;
+    text-align: left;
+	font-size: 27px;	
+	color: white;
+
+}
+
+
+.highlight {
+	display: inline-block;
+}
+header {
+    padding: 10px;
+}
+.navtitle{
+	text-align: left;
+	color: #f8d104;
+	font-size: 32px;
+}
+.header-image {
+    max-width: 400%;
+    height: auto;
+}
+
+.mainh {
+    color: #ffffdd;
+	font-size: 96px;
+	font-family:Didot;
+    font-weight: bold;
+    border-bottom: 9px solid #f8d104;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+.mainsh {
+    color: #ffffdd;
+    text-align: center;
+	display: inline-block;
+}
+
+.mainh2 {
+    color: #ffffdd;
+	font-size: 70px;
+	font-family:Didot;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+	display: inline-block;
+}
+
+
+.mainst {
+    color: #d2de32;
+    font-weight: bold;
+    text-align: center;
+	font-size: 50px;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+
+.mainst2 {
+    color: #d2de32;
+    font-weight: bold;
+    text-align: center;
+	font-size: 30px;
+}
+
+nav {
+    overflow: hidden;
+    text-align: right;
+    padding-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+         
+
+nav {
+            overflow: hidden;
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #a2c579;
+            color: #FFFFFF;
+        }
+
+
+
+nav2 {
+            overflow: hidden;
+        }
+
+        nav2 a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            text-decoration: none;
+            background-color: #a2c579;
+        }
+
+
+nav3 {
+        }
+
+        nav3 a {
+            float: none;
+            color: white;
+            text-align: center;
+			padding-top: 500px;
+            padding: 0px 65px;
+            text-decoration: none;
+        }
+
+        nav3 a:hover {
+            background-color: #a2c579;
+            color: #FFFFFF;
+        }
+
+
+
+
+.spacepar {
+    margin-top: 36px;
+}
+
+.spacepar2 {
+    margin-top: 200px;
+}
+
+
+.container {
+    padding: 20px;
+   text-align: center;
+
+}
+
+
+	
+label,
+input,
+textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+}
+
+footer {
+    color: white;
+    padding: 20px;
+    text-align: left;
+	display: block;
+}
+footer2 {
+    color: white;
+    padding: 20px;
+    text-align: right;
+}
+
+
+
+.footer-logo {
+    max-width: 50px; 
+    max-height: 50px; 
+}
+
+.form-container {
+    max-width: 1250px;
+    margin: 0;
+    padding-left:35px;
+    padding-right: 20px;
+    background-color: #d2de32;
+	margin-top: 300px;
+
+}
+
+.formhd {
+    color: #000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+	
+
+}
+
+.name-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    margin-right: 20px;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-container {
+    text-align: center;
+	color: #016a70;
+}
+
+.cecontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cebox {
+    width: 300px;
+    height: 100px;
+    margin: 20px;
+    background-color: #B5A796;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	font-size: 35px;
+	color: #f5eec8;
+	border-radius: 30px;
+
+}
+
+.cebox:hover {
+	background-color: #52AB85;
+    color: #C6CFCB;
+        }
+
+
+#calculator {
+    text-align: center;
+    padding: 20px;
+    background-color: #b5d5cc;
+    border: 2px solid #333;
+    padding-right: 20px;
+
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-right: 1px;
+    padding-left: 0.005px;
+
+}
+
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #016a70;
+    border: 2px solid #333;
+	color: #f5eec8;
+    transition: background-color 0.3s ease;
+	font-size: 25px;
+}
+
+
+button:hover {
+    background-color: #5D5FAA;
+    color: #FCEC20;
+}
+
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+}
+
+img {
+    width: 50%;
+	height: 50%;
+}
