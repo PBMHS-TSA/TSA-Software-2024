@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
-import About from "../views/About.vue";
+import chat from "../views/Chat.vue";
+import mf from "../views/mf.vue";
 
 const routes = [
   {
@@ -12,15 +12,11 @@ const routes = [
   {
     path: "/chat",
     name: "Chat",
-    component: About,
+    component: chat,
   },{
     path: "/mf",
-    name: "Make",
-    component: About,
-  },{
-    path: "/settings",
-    name: "Settings",
-    component: About,
+    name: "Mf",
+    component: mf,
   },
 ];
 
