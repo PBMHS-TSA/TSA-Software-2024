@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div id="card-container">
-        <div class="card" v-for="i in amount" :key="i" :id="i">
-            <card :age="getAge()" :breed="getBreed()" :dogimage="doglinks[Math.floor(Math.random() * doglinks.length)]" :id="i" :name="getName()"></card>
-        </div>
+            <card v-for="i in amount" :key="i" :age="getAge()" :breed="getBreed()" :dogimage="doglinks[Math.floor(Math.random() * doglinks.length)]" :id="i" :name="getName()"></card>
     </div>
   </div>
 </template>
