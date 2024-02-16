@@ -12,8 +12,8 @@
         <img :src="doglinks[0]" alt="Dog 2" />
         <h2>{{ getName() }}</h2>
         <p>Age: {{ getAge() }} YAears</p>
-        <button onclick="swipe('like')">Like</button>
-        <button onclick="swipe('dislike')">Dislike</button>
+        <button onclick="swipe('like')" ondragover="swipemobile('like')">Like</button>
+        <button onclick="swipe('dislike')" ondragover="swipemobile('dislike')">Dislike</button>
       </div>
       <div class="card" id="card3" style="display: none">
         <img :src="doglinks[0]" alt="Dog 3" />
