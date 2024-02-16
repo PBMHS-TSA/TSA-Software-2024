@@ -19,6 +19,13 @@ export default {
     };
   },
   methods: {
+    getImage() {
+      fetch("https://dog.ceo/api/breeds/image/random")
+        .then((response) => response.json())
+        .then((data) => {
+            let json = JSON.stringify(data.message);
+        });
+    },
     getAge() {
       return Math.floor(Math.random() * 13) + 1;
     },
