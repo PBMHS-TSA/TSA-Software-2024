@@ -32,7 +32,7 @@ export default {
           .then((data) => {
             let json = JSON.stringify(data);
  console.log(json)
- return json;
+ return json.message;
         });
     },
     getAge() {
@@ -51,9 +51,9 @@ export default {
     // },
   },
   
-  beforeCreate() {
+  beforeMount() {
     for (let i = 0; i < this.amount; i++) {
-      this.getImage()
+      let data = this.getImage()
         this.doglinks.push(data);
     }
   },
