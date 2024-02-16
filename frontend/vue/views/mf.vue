@@ -41,7 +41,7 @@
     </div>
   </template>
   <script>
-    import { CredentialManager } from "../../globals";
+    // import { CredentialManager } from "../../globals";
 export default {
   data() {
     return {
@@ -56,11 +56,11 @@ export default {
     };
   },
   methods: {
-    async submit() {
-      CredentialManager.AddCheck(this.form.username, this.form.password, undefined, (valid) => {
-        this.$router.push("/chat");
-      });
-    },
+    // async submit() {
+    //   CredentialManager.AddCheck(this.form.username, this.form.password, undefined, (valid) => {
+    //     this.$router.push("/chat");
+    //   });
+    // },
   },
 };
   </script>
