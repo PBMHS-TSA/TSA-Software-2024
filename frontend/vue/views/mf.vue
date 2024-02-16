@@ -1,13 +1,14 @@
-<Suspense>
+
 <template>
   <div class="container">
     <div id="card-container">
-        
+      <Suspense>
             <card v-for="i in amount" :visible="(i==1 ? true : false)"  :key="i" :age="getAge()" :breed="this.lastbreed" :dogimage="getImage()" :id="i" :name="getName()" ></card>
-    </div>
+      </Suspense>
+          </div>
   </div>
 </template>
-</Suspense>
+
 <script>
 // import { CredentialManager } from "../../globals";
 import Card from "./components/Card.vue";
