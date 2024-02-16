@@ -3,8 +3,11 @@
   <div class="container">
     <div id="card-container">
       <Suspense>
-            <card v-for="i in amount" :visible="(i==1 ? true : false)"  :key="i" :age="getAge()" :breed="this.lastbreed" :dogimage="getImage()" :id="i" :name="getName()" ></card>
-      </Suspense>
+            <card v-for="i in amount" :visible="(i==1 ? true : false)"  :key="i" :age="getAge()" :breed="this.lastbreed.charAt(0).toUpperCase()+ this.lastbreed.slice(1)" :dogimage="getImage()" :id="i" :name="getName()" ></card>
+      <template #fallback>
+        <p>Loading Image...</p>
+        </template>
+          </Suspense>
           </div>
   </div>
 </template>
