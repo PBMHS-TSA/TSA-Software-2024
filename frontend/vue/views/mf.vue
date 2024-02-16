@@ -9,7 +9,7 @@
 </template>
 <script>
 // import { CredentialManager } from "../../globals";
-import Card from "./components/card.vue";
+import Card from "./components/Card.vue";
 import {dogbreeds,dognames} from  "./helper.js";
 
 export default {
