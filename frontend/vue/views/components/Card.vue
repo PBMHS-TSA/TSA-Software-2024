@@ -13,7 +13,7 @@ export default {
   data() {
     return { isTargetVisible: false };
   },
-  name: "Message",
+  name: "Card",
   props: {
     id:Number,
     name: String,
