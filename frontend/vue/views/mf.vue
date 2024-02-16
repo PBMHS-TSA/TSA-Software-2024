@@ -1,3 +1,4 @@
+<Suspense>
 <template>
   <div class="container">
     <div id="card-container">
@@ -6,6 +7,7 @@
     </div>
   </div>
 </template>
+</Suspense>
 <script>
 // import { CredentialManager } from "../../globals";
 import Card from "./components/Card.vue";
