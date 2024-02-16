@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :id="id">
+    <div class="card" :id="id" :style='"display:" + (visible ? "unset" : "none") + ";"'>
         <img alt="Dog 1" :src="dogimage" />
         <h2>{{ name }}</h2>
         <p>Age: {{age }} Years</p>
@@ -15,6 +15,7 @@ export default {
   },
   name: "Card",
   props: {
+    visible: Boolean,
     id:Number,
     name: String,
     age: Number,
