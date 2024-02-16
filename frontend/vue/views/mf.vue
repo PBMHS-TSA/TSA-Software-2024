@@ -30,7 +30,7 @@ export default {
          await fetch("https://dog.ceo/api/breed/"+this.lastbreed+"/images/random")
         .then((response) => response.json())
         .then((data) => {
-            let json = JSON.stringify(data.message);
+            let json = JSON.stringify(data);
  console.log(json)
  return json;
         });
