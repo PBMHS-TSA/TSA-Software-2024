@@ -50,11 +50,11 @@ export default {
     //   });
     // },
   },
-  mounted() {
+  
+  beforeCreate() {
     for (let i = 0; i < this.amount; i++) {
-      this.getImage().then((data) => {
+      this.getImage()
         this.doglinks.push(data);
-      });
     }
   },
   components: {
