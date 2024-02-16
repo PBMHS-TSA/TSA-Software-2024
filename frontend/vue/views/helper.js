@@ -151,4 +151,4 @@ const dognames = [
     "Zip",
     
   ];
-  module.exports = { dogbreeds, dognames };
+export { dogbreeds, dognames };
