@@ -3,7 +3,7 @@
   <div class="container">
     <div id="card-container">
       <Suspense>
-            <card v-for="i in amount" :visible="(i==1 ? true : false)"  :key="i" :age="getAge()" :breed="this.lastbreed.charAt(0).toUpperCase()+ this.lastbreed.slice(1)" :dogimage="doglinks[i]" :id="i" :name="getName()" ></card>
+            <card v-for="i in amount" :visible="(i==1 ? true : false)"  :key="i" :age="dogs[i].age" :breed="dogs[i].breed.charAt(0).toUpperCase()+ dogs[i].breed.slice(1)" :dogimage="dogs[i].image" :id="dogs[i].id" :name="dogs[i].name" ></card>
       <template #fallback>
         <p>Loading Image...</p>
         </template>
@@ -21,14 +21,12 @@ export default {
   data() {
     return {
         amount: 1, //Math.floor(Math.random() * 5) + 1,
-        lastbreed: "",
-        doglinks: []
+        dogs: []
     };
   },
   methods: {
-    async getImage() {
-        this.lastbreed=dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
-         await fetch("https://dog.ceo/api/breed/"+this.lastbreed+"/images/random")
+    async getImage(breed) {
+         await fetch("https://dog.ceo/api/breed/"+breed+"/images/random")
           .then((data) => {
             let json = JSON.stringify(data);
  console.log(json)
@@ -53,8 +51,15 @@ export default {
   
   beforeMount() {
     for (let i = 0; i < this.amount; i++) {
-      let data = this.getImage()
-        this.doglinks.push(data);
+      let data = {
+        id: i,
+        age: this.getAge(),
+        breed: this.getBreed(),
+        name: this.getName(),
+        image: this.getImage(data.breed),
+      };
+      
+        this.dogs.push(data);
     }
   },
   components: {
