@@ -2,7 +2,9 @@
   <div class="container" v-if="dogs.length > 0">
     <div id="card-container">
       <Suspense>
-        <card v-for="dog in dogs" :key="dog.id" :visible="true" :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase()+ dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name"></card>
+        <card v-for="dog in dogs" :key="dog.id" :visible="true" :age="dog.age"
+          :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id"
+          :name="dog.name"></card>
         <template #fallback>
           <p>Loading Image...</p>
         </template>
@@ -36,7 +38,36 @@ export default {
     },
     async getBreed() {
       return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
+    },
+    swipe(action) {
+      if (action === 'dislike') {
+        dislikeCount++;
+      } else if (action === 'like') {
+        likeCount++;
+
+        if (likeCount === 3) {
+          window.location.href = 'Chat.html';
+          return;
+        }
+      }
+
+      showNextCard();
+    },
+
+    showNextCard() {
+      const currentCard = document.getElementById(`card${currentCardIndex}`);
+      currentCardIndex++;
+
+      const nextCard = document.getElementById(`card${currentCardIndex}`);
+      if (nextCard) {
+        currentCard.style.display = 'none';
+
+        nextCard.style.display = 'block';
+      } else {
+        window.location.href = 'Chat.html';
+      }
     }
+
   },
   async beforeMount() {
     for (let i = 0; i < this.amount; i++) {
