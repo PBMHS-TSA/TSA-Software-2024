@@ -33,14 +33,14 @@ export default {
  return json.message;
         });
     },
-    getAge() {
-      return Math.floor(Math.random() * 13) + 1;
+    async getAge() {
+      return await Math.floor(Math.random() * 13) + 1;
     },
-    getName() {
-      return dognames[Math.floor(Math.random() * dognames.length)];
+    async getName() {
+      return await dognames[Math.floor(Math.random() * dognames.length)];
     },
-    getBreed() {
-      return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
+    async getBreed() {
+      return await dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
     },
     // async submit() {
     //   CredentialManager.AddCheck(this.form.username, this.form.password, undefined, (valid) => {
