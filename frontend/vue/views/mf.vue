@@ -53,10 +53,10 @@ export default {
     for (let i = 0; i < this.amount; i++) {
       let data = {
         id: i,
-        age: this.getAge(),
-        breed: this.getBreed(),
-        name: this.getName(),
-        image: this.getImage(data.breed),
+        age: getAge(),
+        breed: getBreed(),
+        name: getName(),
+        image: getImage(data.breed),
       };
       
         this.dogs.push(data);
