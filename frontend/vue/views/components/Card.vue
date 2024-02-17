@@ -13,6 +13,36 @@ export default {
   data() {
     return { isTargetVisible: false };
   },
+  methods: {
+    swipe(action) {
+      if (action === 'dislike') {
+        dislikeCount++;
+      } else if (action === 'like') {
+        likeCount++;
+
+        if (likeCount === 3) {
+          window.location.href = 'Chat.html';
+          return;
+        }
+      }
+
+      showNextCard();
+    },
+
+    showNextCard() {
+      const currentCard = document.getElementById(`card${currentCardIndex}`);
+      currentCardIndex++;
+
+      const nextCard = document.getElementById(`card${currentCardIndex}`);
+      if (nextCard) {
+        currentCard.style.display = 'none';
+
+        nextCard.style.display = 'block';
+      } else {
+        window.location.href = 'Chat.html';
+      }
+    },
+  },
   name: "Card",
   props: {
     visible: Boolean,

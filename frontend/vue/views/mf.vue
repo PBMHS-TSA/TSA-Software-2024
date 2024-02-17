@@ -39,34 +39,7 @@ export default {
     async getBreed() {
       return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
     },
-    swipe(action) {
-      if (action === 'dislike') {
-        dislikeCount++;
-      } else if (action === 'like') {
-        likeCount++;
-
-        if (likeCount === 3) {
-          window.location.href = 'Chat.html';
-          return;
-        }
-      }
-
-      showNextCard();
-    },
-
-    showNextCard() {
-      const currentCard = document.getElementById(`card${currentCardIndex}`);
-      currentCardIndex++;
-
-      const nextCard = document.getElementById(`card${currentCardIndex}`);
-      if (nextCard) {
-        currentCard.style.display = 'none';
-
-        nextCard.style.display = 'block';
-      } else {
-        window.location.href = 'Chat.html';
-      }
-    }
+    
 
   },
   async beforeMount() {
