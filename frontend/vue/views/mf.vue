@@ -26,7 +26,7 @@ export default {
     async getImage(breed) {
       const response = await fetch("https://dog.ceo/api/breed/" + breed + "/images/random");
       const json = await response.json();
-      return json.message;
+      return await json.message;
     },
     async getAge() {
       return Math.floor(Math.random() * 13) + 1;
