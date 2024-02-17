@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :id="id" :style='(visible ? "" : "display:none;")'>
+    <div class="card" :id='"card" +id' :style='(visible ? "" : "display:none;")'>
         <img alt="Dog 1" :src="dogimage" />
         <h2>{{ name }}</h2>
         <p>Age: {{age }} Years</p>
