@@ -25,6 +25,6 @@ export default {
     target: 'esnext',
     outDir: 'dist',
     assetsDir: '.',
-    sourcemap: false,
+    sourcemap: true,
   },
 };
