@@ -26,7 +26,7 @@ export default {
       } else if (action === 'like') {
         window.stuffs.likeCount++;
 
-        if (likeCount === Math.floor(Math.random() * 20)) {
+        if ( window.stuffs.likeCount === Math.floor(Math.random() * 20)) {
           window.location.href = 'Chat.html';
           return;
         }
@@ -40,7 +40,7 @@ export default {
       } else if (action === 'like') {
         window.stuffs.likeCount++;
 
-        if (likeCount === Math.floor(Math.random() * 20)) {
+        if ( window.stuffs.likeCount === Math.floor(Math.random() * 20)) {
           window.location.href = 'Chat.html';
           return;
         }
