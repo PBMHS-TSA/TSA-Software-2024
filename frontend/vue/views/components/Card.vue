@@ -1,11 +1,11 @@
 <template>
-  <div class="card" :id='"card" + id' :style='(visible ? "" : "display:none;")'>
+  <div class="card" :id='"card" + id' :style='(visible ? "" : "display:none;")' :ondragover="swipemobile(event, id)">
     <img alt="Dog 1" :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
-    <button onclick="swipe('like')" :ondragover="swipemobile(event, 'like', id)">Like</button>
-    <button onclick="swipe('dislike')" :ondragover="swipemobile(event, 'dislike', id)">Dislike</button>
+    <button  onclick="swipe('like')" >Like</button>
+    <button onclick="swipe('dislike')" >Dislike</button>
   </div>
 </template>
 <script>
@@ -19,7 +19,7 @@ export default {
     return { isTargetVisible: false };
   },
   methods: {
-    swipemobile(event, action, id) {
+    swipemobile(event,id) {
       console.log(event)
       if (action === 'dislike') {
         window.stuffs.dislikeCount++;
