@@ -40,12 +40,14 @@ export default {
   },
   async beforeMount() {
     for (let i = 0; i < this.amount; i++) {
+      const breed = await this.getBreed(); // Fetch breed first
+
       const data = {
         id: i,
         age: await this.getAge(),
-        breed: await this.getBreed(),
+        breed: breed,
         name: await this.getName(),
-        image: await this.getImage(data.breed) // Use await here
+        image: await this.getImage(breed) // Use await here
       };
       this.dogs.push(data);
     }
