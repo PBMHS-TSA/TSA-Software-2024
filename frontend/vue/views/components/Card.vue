@@ -20,7 +20,6 @@ export default {
   },
   methods: {
     swipemobile(event,action , id) {
-      event.preventDefault();
       console.log(event)
       if (action === 'dislike') {
         window.stuffs.dislikeCount++;
