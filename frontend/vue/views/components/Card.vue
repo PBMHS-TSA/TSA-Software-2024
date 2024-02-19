@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :id='"card" + id' :style='(visible ? "" : "display:none;")' :ondragover="swipemobile">
+  <div class="card" :id='"card" + id' :style='(visible ? "" : "display:none;")'> <!--:ondragover="swipemobile"-->
     <img :alt='"Dog" + i' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
