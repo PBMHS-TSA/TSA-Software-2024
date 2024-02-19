@@ -1,6 +1,6 @@
 <template>
   <div class="card" :id='"card" + id' :style='(visible ? "" : "display:none;")' :ondragover="swipemobile(event, id)">
-    <img alt="Dog 1" :src="dogimage" />
+    <img :alt='"Dog" + i' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     swipemobile(event,id) {
+      let action = 'like'
       console.log(event)
       if (action === 'dislike') {
         window.stuffs.dislikeCount++;
