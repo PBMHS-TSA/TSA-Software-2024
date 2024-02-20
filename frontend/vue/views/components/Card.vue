@@ -36,6 +36,7 @@ export default {
       this.showNextCard();
     },
     swipe(action) {
+      console.log(action)
       if (action === 'dislike') {
         window.stuffs.dislikeCount++;
       } else if (action === 'like') {
