@@ -5,6 +5,7 @@ class Database {
   __init__() {
     // tables
     //db.exec('DROP TABLE messages')
+    db.exec("CREATE TABLE IF NOT EXISTS system (" + "id NUMERIC NOT NULL," + "likes TEXT," + "dislikes TEXT);");
     db.exec("CREATE TABLE IF NOT EXISTS users (" + "id NUMERIC NOT NULL," + "email TEXT NOT NULL," + "username TEXT NOT NULL," + "password TEXT NOT NULL,code TEXT);");
   }
   addUser(email, username, password) {
