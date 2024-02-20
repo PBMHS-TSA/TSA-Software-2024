@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :id='"card" + id+1' :style='(visible ? "" : "display:none;")'> <!--:ondragover="swipemobile"-->
+  <div class="card" :id='"card" + id' :style='(visible ? "" : "display:none;")'> <!--:ondragover="swipemobile"-->
     <img :alt='"Dog" + i' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
@@ -10,7 +10,7 @@
 </template>
 <script>
 window.stuffs = {
-  currentCardIndex: 1,
+  currentCardIndex: 0,
   dislikeCount: 0,
   likeCount: 0
 }
