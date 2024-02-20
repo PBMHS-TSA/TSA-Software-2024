@@ -60,7 +60,7 @@ export default {
 
         nextCard.style.display = 'block';
       } else {
-        window.location.href = 'Chat.html';
+        this.$router.push({ path: 'chat' })
       }
     },
   },
