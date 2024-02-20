@@ -54,10 +54,9 @@ export default {
     },
 
     showNextCard() {
-      let currentCardIndex = window.stuffs.currentCardIndex;
-      const currentCard = document.getElementById(`card${currentCardIndex}`);
-      currentCardIndex++
-      const nextCard = document.getElementById(`card${currentCardIndex}`);
+      
+      const currentCard = document.getElementById(`card${++window.stuffs.currentCardIndex}`);
+      const nextCard = document.getElementById(`card${ window.stuffs.currentCardIndex}`);
       if (nextCard) {
         currentCard.style.display = 'none';
 

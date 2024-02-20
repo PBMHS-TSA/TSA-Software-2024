@@ -38,7 +38,7 @@ export default {
     },
     async getBreed() {
       return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
-    },
+    }, 
     
 
   },
