@@ -10,7 +10,7 @@ function swipe(action) {
         likeCount++;
 
         if (likeCount === 3) {
-            window.location.href = 'Chat.html';
+            window.location.href = 'chat';
             return;
         }
     }
@@ -28,6 +28,6 @@ function showNextCard() {
 
         nextCard.style.display = 'block';
     } else {
-        window.location.href = 'Chat.html';
+        window.location.href = 'chat';
     }
 }
