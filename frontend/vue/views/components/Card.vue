@@ -28,7 +28,7 @@ export default {
         window.stuffs.likeCount++;
 
         if (window.stuffs.likeCount === Math.floor(Math.random() * 20)) {
-          window.location.href = 'chat';
+          //window.location.href = 'chat';
           return;
         }
       }
@@ -42,7 +42,7 @@ export default {
         window.stuffs.likeCount++;
 
         if (window.stuffs.likeCount === Math.floor(Math.random() * 20)) {
-          window.location.href = 'chat';
+          //window.location.href = 'chat';
           return;
         }
       }
@@ -60,7 +60,7 @@ export default {
 
         nextCard.style.display = 'block';
       } else {
-        this.$router.push({ path: 'chat' })
+        //this.$router.push({ path: 'chat' })
       }
     },
   },

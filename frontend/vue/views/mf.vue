@@ -2,7 +2,7 @@
   <div class="container" v-if="dogs.length > 0">
     <div id="card-container">
       <Suspense>
-        <card v-for="dog in dogs" :key="dog.id" :visible="true" :age="dog.age"
+        <card v-for="dog in this.dogs" :key="dog.id" :visible="true" :age="dog.age"
           :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id"
           :name="dog.name"></card>
         <template #fallback>
@@ -46,8 +46,8 @@ export default {
     for (let i = 0; i < this.amount; i++) {
       const breed = await this.getBreed(); // Fetch breed first
 
-      const data = {
-        id: i,
+      const data = {  
+        id: Date.now(),
         age: await this.getAge(),
         breed: breed,
         name: await this.getName(),
