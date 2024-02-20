@@ -1,6 +1,6 @@
 <template>
   <div class="card" :id='"card" + id' :style='(visible ? "" : "display:none;")'> <!--:ondragover="swipemobile"-->
-    <img :alt='"Dog" + i' :src="dogimage" />
+    <img :alt='"Dog" + id' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
