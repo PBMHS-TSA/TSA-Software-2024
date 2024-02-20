@@ -4,7 +4,7 @@
       <Suspense>
         <card v-for="dog in this.dogs" :key="dog.id" :visible="true" :age="dog.age"
           :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id"
-          :name="dog.name"></card>
+          :name="dog.name" :linenumber="dog.linenumber"></card>
         <template #fallback>
           <p>Loading Image...</p>
         </template>
@@ -51,7 +51,8 @@ export default {
         age: await this.getAge(),
         breed: breed,
         name: await this.getName(),
-        image: await this.getImage(breed) // Use await here
+        image: await this.getImage(breed), // Use await here
+        linenumber: i
       };
       this.dogs.push(data);
     }
