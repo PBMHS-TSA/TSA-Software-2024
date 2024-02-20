@@ -4,8 +4,8 @@
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
-    <button :onclick="swipe('like')">Like</button>
-    <button :onclick="swipe('dislike')">Dislike</button>
+    <button :onclick="swipe" class="like">Like</button>
+    <button :onclick="swipe" class="dislike">Dislike</button>
   </div>
 </template>
 <script>
@@ -35,8 +35,8 @@ export default {
 
       this.showNextCard();
     },
-    swipe(action) {
-      console.log(action)
+    swipe(event) {
+      console.log(event)
       if (action === 'dislike') {
         window.stuffs.dislikeCount++;
       } else if (action === 'like') {
