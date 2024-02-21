@@ -290,7 +290,6 @@ router.post("/makeadmin", POSTEnsureAdmin, (req, res) => { // makes a user an ad
       if (us.isAdmin() == 1 || us.isAdmin() == "true") {
         new user(db, username).setAdmin(1);
         res.send("Operation complete");
-        sendWebhook(`User ${us.getUsername()} has made ${toset.getUsername()} an admin`)
         return;
       } else {
         res.status(403).send("Operation Canceled due to a lack of permissions");
@@ -322,7 +321,6 @@ router.post("/removeadmin", POSTEnsureAdmin, (req, res) => { // same as  above b
       if (us.isAdmin() == 1 || us.isAdmin() == "true") {
         new user(db, username).setAdmin(0);
         res.send("Operation complete");
-        sendWebhook(`User ${us.getUsername()} has removed ${toset.getUsername()} admin permissions`)
         return;
       } else {
         res.status(403).send("Operation Canceled due to a lack of permissions");
@@ -355,7 +353,6 @@ router.delete("/delete", POSTEnsureAuth, (req, res) => {
         return
     }
     use.removeUser()
-    sendWebhook(`User ${use.getUsername()} was deleted! by ${auth.getUsername()}`)
     res.send("User deleted")
 
 

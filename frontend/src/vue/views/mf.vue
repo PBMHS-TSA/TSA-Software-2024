@@ -20,7 +20,7 @@ import { dogbreeds, dognames } from "./helper.js";
 export default {
   data() {
     return {
-      amount:  Math.floor(Math.random() * 5) + 1,
+      amount: 5,// Math.floor(Math.random() * 5) + 1,
       dogs: []
     };
   },
