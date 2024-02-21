@@ -36,7 +36,7 @@ export default {
       this.showNextCard();
     },
     swipe(event) {
-      let action = 'like'
+      let action = event.target.className
 
       console.log(event)
       if (action === 'dislike') {
@@ -62,7 +62,7 @@ export default {
 
         nextCard.style.display = 'block';
       } else {
-        //this.$router.push({ path: 'chat' })
+        this.$router.push({ name: 'Home'})
       }
     },
   },
