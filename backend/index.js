@@ -19,7 +19,7 @@ db.initialize();
 
 const port = 3000;
 const fs = require("fs");
-const https = require("https");
+const https = require("http");
 const privateKey = fs.readFileSync("./ssl/key.txt", "utf8");
 const certificate = fs.readFileSync("./ssl/cert.txt", "utf8");
 const credentials = { key: privateKey, cert: certificate };
@@ -125,12 +125,12 @@ app.post("*", function (req, res) {
 });
 //Starts server and sets a port
 
-// httpsServer.listen(443, "0.0.0.0", () => {
-//   console.log(`Serving on 443/80`)
-// })
-
-
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+httpsServer.listen(80, "0.0.0.0", () => {
+  console.log(`Serving on 443/80`)
 })
+
+
+
+// app.listen(port, () => {
+//   console.log(`Server started on port ${port}`);
+// })
