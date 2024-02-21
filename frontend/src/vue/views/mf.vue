@@ -55,6 +55,7 @@ export default {
         linenumber: i
       };
       this.dogs.push(data);
+      console.log(this.dogs)
     }
   },
   components: {
