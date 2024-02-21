@@ -191,7 +191,6 @@ router.get("/forgot", ensureGuest, (req, res) => {
   let querytoken = req.query.token;
 
   if (querytoken == undefined) res.render("forgot",{
-    body: bodyparam,
     user: passInParams(req.cookies.username),
   });
 });
