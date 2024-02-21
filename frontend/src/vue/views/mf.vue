@@ -42,7 +42,7 @@ export default {
     
 
   },
-  async beforeMount() {
+  async beforeCreate() {
     for (let i = 0; i < this.amount; i++) {
       const breed = await this.getBreed(); // Fetch breed first
 
