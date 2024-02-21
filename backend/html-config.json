@@ -1,0 +1,13 @@
+{
+    "__comments__": "this is how comments are set up",
+    "__basedir__": "the base dir is ../WebPage/HTML",
+
+    "usehtml": "false",
+    "__^__": "if you dont want to use html set to false and refer to the section below this ",
+    "basefile": "./",
+    "__^^__": "if you want to use an index.html use ./ and not a file name if not use ./filename or ./dir/filename"
+
+
+
+
+}

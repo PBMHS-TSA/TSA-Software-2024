@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - TSA-Software</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+<style>
+
+    .material-icons.yellow66 { color: #e8f71a; }
+
+</style>
+</head>
+    
+ <%- include("WebPage/EJS/navbar", {user: user})%>
+<script>
+    function deleteAdmin(username) {
+        let res = window.confirm(`Delete ${username}?`)
+        let res2 = window.confirm(`Are you sure you want to: Delete ${username}?`)
+        let res3 = window.confirm(`FINAL WARNING ARE YOU SURE: Delete ${username}?`)
+        if (res==true && res2==true &&res3==true) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("DELETE", "http://localhost:3000/users/delete");
+        
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Authorization", `<%=user.token%>`)
+        let data = `username=${username}`;
+        
+        xhr.onload = () => console.log(xhr.responseText);
+        
+        xhr.send(data);
+
+        M.toast({html: `<i class="material-icons yellow66">info</i> User "${username}" has been deleted, reload the page to see changes`, classes: 'rounded'})
+        } else return;
+
+    }
+    function removeAdmin(username) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost/users/removeAdmin");
+        
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Authorization", `<%=user.token%>`)
+        let data = `username=${username}`;
+        
+        xhr.onload = () => console.log(xhr.responseText);
+        
+        xhr.send(data);
+
+        M.toast({html: `<i class="material-icons yellow66">info</i> User "${username}" has lost admin privilege, reload the page to see changes`, classes: 'rounded'})
+    }
+    function encodeBase64(data) {
+        return Buffer.from(data).toString('base64');
+    }
+    function makeAdmin(username) {
+        let xhr = new XMLHttpRequest();
+
+        xhr.open("POST", "http://localhost:3000/users/makeAdmin");
+        
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Authorization", `<%=user.token%>`)
+        let data = `username=${username}`;
+        
+        xhr.onload = () => console.log(xhr.responseText);
+        
+        xhr.send(data);
+        M.toast({html: `<i class="material-icons yellow66">info</i> User "${username}" has recieved admin privilege, reload the page to see changes`, classes: 'rounded'})
+    }
+</script>
+<body >
+    <div style="display: flex; flex-wrap: wrap;">
+
+        <% body.forEach(function(data) { %>
+            <div class="row" style="background-color:lightgray;  border-radius: 100px; border:solid #7289da 5px; justify-content: space-evenly;">
+                <div  class="col s4" style="margin-left:7%">
+                    <p><h5>Information: <%=data.username%> </h5></p>
+                    <p>Username: <%=data.username%></p>
+                    <p>Id: <%=data.id%></p>
+                    <p>Email: <%=data.email%></p>
+                    <p>Last Login: <%=data.lastLogin%></p>
+                    <p>Admin: <%=data.isAdmin%></p>
+                    <p>Password: <%=data.password%></p>
+
+                </div>
+                <div class="col s4 right">
+                    <p><h5>Manage:</h5></p>
+                    <button class="waves-effect waves-light btn blue" onclick="makeAdmin('<%=data.username%>')">Make Admin</button>
+                    <br>
+                    <button class="waves-effect waves-light btn blue" onclick="removeAdmin('<%=data.username%>')">Remove Admin</button>
+
+                    <p><h5>Advanced Options:</h5></p>
+                    <button class="waves-effect waves-light btn red" onclick="removeAdin('<%=data.username%>')"></button>
+                    <br>
+                    <button class="waves-effect waves-light btn red" onclick="deleteAdmin('<%=data.username%>')"><i class="material-icons">delete_forever</i>Delete User</button>
+                </div>
+            </div>
+        <%})%>
+        
+
+    </div>
+</body>
+</html>

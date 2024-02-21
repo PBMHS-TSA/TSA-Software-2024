@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dashboard">
+
+    <title>Home - TSA-Software</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
+    />
+  </head>
+
+  <%- include("WebPage/EJS/navbar", {user:user})%>
+
+  <body>
+    <div>
+      <% if (user) {%>
+      <p>Id: <%=user.id%></p>
+      <%}%> <% if (user) {%>
+      <p>Admin: <%=user.isAdmin%></p>
+      <%}%> <% if (user) {%>
+      <p>Username: <%=user.username%></p>
+      <%}%> <% if (user) {%>
+      <p>Email: <%=user.email%></p>
+      <%}%> <% if (user) {%>
+      <p>Password: <%=user.password%></p>
+      <%}%> <% if (user) {%>
+      <p>Token: <%=user.token%></p>
+      <%}%> <% if (user) {%>
+      <p>Login: <%=user.lastlogin.seconds%></p>
+      <%}%>
+    </div>
+  </body>
+</html>

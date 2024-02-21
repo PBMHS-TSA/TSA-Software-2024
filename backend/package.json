@@ -1,16 +1,20 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "better-sqlite3": "^8.7.0",
+    "body-parser": "^1.20.1",
+    "connect-busboy": "^1.0.0",
+    "cookie-parser": "^1.4.6",
+    "discord-webhook-node": "^1.1.8",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "nodemon": "^3.0.3",
-    "socket.io-client": "^4.7.4"
+    "fs": "^0.0.1-security",
+    "multer": "^1.4.5-lts.1",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.22",
+    "npm": "^9.5.0",
+    "request-ip": "^3.3.0",
+    "socket.io": "^4.5.4",
+    "sqlite3": "^5.1.4"
   }
 }

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - TSA-Software</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
+    />
+  </head>
+
+  <%- include("../WebPage/EJS/navbar", {user: user})%>
+
+  <body>
+    <div style="margin: 0 auto">
+      <center>
+        <style type="text/css">
+          .tg {
+            border-collapse: collapse;
+            border-color: #aabcfe;
+            border-spacing: 0;
+          }
+          .tg td {
+            background-color: #e8edff;
+            border-color: #aabcfe;
+            border-style: solid;
+            border-width: 1px;
+            color: #669;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+          }
+          .tg th {
+            background-color: #b9c9fe;
+            border-color: #aabcfe;
+            border-style: solid;
+            border-width: 1px;
+            color: #039;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+          }
+          .tg .tg-phtq {
+            background-color: #d2e4fc;
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top;
+          }
+          .tg .tg-7btt {
+            border-color: inherit;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: top;
+          }
+          .tg .tg-6gib {
+            background-color: #d2e4fc;
+            border-color: inherit;
+            font-weight: bold;
+            text-align: left;
+            vertical-align: top;
+          }
+          .tg .tg-0pky {
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top;
+          }
+          .tg .tg-fymr {
+            border-color: inherit;
+            font-weight: bold;
+            text-align: left;
+            vertical-align: top;
+          }
+        </style>
+        <table class="tg" style="table-layout: fixed; width: 609px">
+          <colgroup>
+            <col style="width: 152px" />
+            <col style="width: 84px" />
+            <col style="width: 101px" />
+            <col style="width: 272px" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="tg-7btt">Route</th>
+              <th class="tg-7btt">Method</th>
+              <th class="tg-7btt">Permission</th>
+              <th class="tg-7btt">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-phtq">/</td>
+              <td class="tg-6gib">GET</td>
+              <td class="tg-phtq">GUEST</td>
+              <td class="tg-phtq">The main informational page</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">/login</td>
+              <td class="tg-fymr">GET</td>
+              <td class="tg-0pky">GUEST(R)</td>
+              <td class="tg-0pky">The login page</td>
+            </tr>
+            <tr>
+              <td class="tg-phtq">/signup</td>
+              <td class="tg-6gib">GET</td>
+              <td class="tg-phtq">GUEST(R)</td>
+              <td class="tg-phtq">The signup page</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">/users/login</td>
+              <td class="tg-fymr">GET</td>
+              <td class="tg-0pky">GUEST(R)</td>
+              <td class="tg-0pky">The request to log the user in</td>
+            </tr>
+            <tr>
+              <td class="tg-phtq">/users/signup</td>
+              <td class="tg-6gib">GET</td>
+              <td class="tg-phtq">GUEST(R)</td>
+              <td class="tg-phtq">The request to create an account</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">/dashboard</td>
+              <td class="tg-fymr">GET</td>
+              <td class="tg-0pky">USER</td>
+              <td class="tg-0pky">The users dashboard</td>
+            </tr>
+            <tr>
+              <td class="tg-phtq">/users/list</td>
+              <td class="tg-6gib">GET</td>
+              <td class="tg-phtq">ADMN(R)</td>
+              <td class="tg-phtq">
+                Lists all users in the database and allows the admins to send
+                actions
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">/documentation</td>
+              <td class="tg-fymr">GET</td>
+              <td class="tg-0pky">USER</td>
+              <td class="tg-0pky">Shows the documentation of routes</td>
+            </tr>
+            <tr>
+              <td class="tg-phtq">/users/removeAdmin</td>
+              <td class="tg-6gib">POST</td>
+              <td class="tg-phtq">ADMIN(R)</td>
+              <td class="tg-phtq">Removes admin from a user</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">/users/makeAdmin</td>
+              <td class="tg-fymr">POST</td>
+              <td class="tg-0pky">ADMIN(R)</td>
+              <td class="tg-0pky">Makes a user an admin</td>
+            </tr>
+            <tr>
+              <td class="tg-phtq">/users/logout</td>
+              <td class="tg-6gib">GET</td>
+              <td class="tg-phtq">USER</td>
+              <td class="tg-phtq">Logs a users session out</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">/users/forgot</td>
+              <td class="tg-fymr">GET</td>
+              <td class="tg-0pky">GUEST(R)</td>
+              <td class="tg-0pky">
+                Allows the user to get a reset password email
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-phtq">/users/forgot</td>
+              <td class="tg-6gib">POST</td>
+              <td class="tg-phtq">GUEST(R)</td>
+              <td class="tg-phtq">
+                Allows the user to get a reset password email
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">/users/reset</td>
+              <td class="tg-fymr">GET</td>
+              <td class="tg-0pky">GUEST(R)</td>
+              <td class="tg-0pky">Allows the user to reset their password</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </div>
+  </body>
+</html>

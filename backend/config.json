@@ -1,0 +1,12 @@
+{
+    "__comments__": "this is how comments are set up",
+    "baseurl": "api/get",
+
+    "port": "3000",
+    "address": "0.0.0.0",
+    "__result__": "http://{address}:{port}/{base-url}",
+
+
+    "__File__": "This all gets relayed back to the index.js file"
+
+}
