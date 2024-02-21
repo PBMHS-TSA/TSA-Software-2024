@@ -6,7 +6,7 @@ module.exports = function (io, socket, db) {
             email: null,
             username: null,
             userId: null
-        }
+        }``
         let json = msg.constructor == ({}).constructor ? msg : JSON.parse(msg)
         let creds = {};
         if (json.userData && json.userData.username) creds=json.userData

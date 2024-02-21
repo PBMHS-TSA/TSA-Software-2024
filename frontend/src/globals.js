@@ -10,7 +10,7 @@ if (!socketInstance) {
 
 export const socket = {
   on: socketInstance.on.bind(socketInstance),
-
+  id: socketInstance.id,
   emit: (ev, body, callback = null) => {
     let data = CredentialManager.getData();
 

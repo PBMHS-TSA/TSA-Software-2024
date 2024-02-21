@@ -30,13 +30,13 @@ for (let i = 0; i < allowedIps.length; i++) {
 }
 
 const corsOptions = {
-  origin: ["https://webapp.twetzel.com", "https://webpack-7xv.pages.dev", "http://192.168.56.1:8080", "http://localhost:8080/", "http://localhost:5173/", ...allowedIps],
-  credentials: true,
+  origin: ["https://tsa-software-2024.pages.dev","https://webapp.twetzel.com", "https://webpack-7xv.pages.dev", "http://192.168.56.1:8080", "http://localhost:8080/", "http://localhost:5173/", ...allowedIps],
+  credentials: true,  
 };
 var httpsServer = https.createServer(credentials, app);
 
 const { Server } = require("socket.io");
-const io = new Server( {
+const io = new Server(httpsServer, {
   cors: {
     origin: corsOptions.origin,
     credentials: corsOptions.credentials,
@@ -116,7 +116,7 @@ app.get("*", function (req, res) {
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"></link>
   <meta name="description" content="404 | Page not found">
   </head>
-  <center>The page you tried to access doesnt exist <br><a class="waves-effect waves-light btn blue" href='/'>Click here to GO Home</a></center>`
+  <center>The page you tried to access doesn't exist <br><a class="waves-effect waves-light btn blue" href='/'>Click here to GO Home</a></center>`
   );
 });
 // same as a bove but for post
