@@ -5,7 +5,7 @@ export const CredentialManager = new Creds();
 var socketInstance = null;
 
 if (!socketInstance) {
-  socketInstance = io("https://dashboard.sokobot.info/");
+  socketInstance = io("http://localhost:3000/");
 }
 
 export const socket = {
