@@ -4,7 +4,7 @@
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
-    <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-5x" ></i></button>
+    <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-4x" ></i></button>
     <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
   </div>
 </template>
