@@ -63,8 +63,11 @@ export default {
             role: "system",
             content: `write a about a breed of dog that is ${data.breed}. The dogs name is ${data.dogname}, and he is ${data.age} years old. 
             make 1 explanation talking about the dog and its behavior, and make each description vary from 100 to 300 words.`,
+           name: "System",
           },
+
         ],
+
         model: "gpt-3.5-turbo",
       });
 
