@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-if="dogs.length > 0">
     <div id="card-container">
-      <card v-for="dog in this.dogs" :key="dog.id"  :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name" :linenumber="dog.linenumber"></card>
+      <card v-for="dog in this.dogs" :key="dog.id"  :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name" :linenumber="dog.linenumber" :owner="dog.owner" :distance="dog.distance"></card>
     </div>
   </div>
 </template>
@@ -22,6 +22,27 @@ export default {
       const response = await fetch("https://dog.ceo/api/breed/" + breed + "/images/random");
       const json = await response.json();
       return await json.message;
+    },
+    async getOwner() {
+      const response = await fetch("https://api.namefake.com/english-united-states/female/");
+      const json = await response.json();
+
+      let owner = {
+        name: json.name,
+        
+      };
+      return owner
+    },
+    async getMiles() {
+// Generate a random number between 0 and 10 with decimals
+var randomNumber = Math.random() * 10;
+console.log(randomNumber); // Output a random number between 0 and 10 (exclusive)
+
+// If you want to limit the number of decimal places, you can use toFixed() method
+var decimalPlaces = 2;
+var roundedRandomNumber = randomNumber.toFixed(decimalPlaces);
+console.log(roundedRandomNumber); // Output a random number with 2 decimal places
+return roundedRandomNumber;
     },
     async getAge() {
       return Math.floor(Math.random() * 13) + 1;
@@ -44,6 +65,8 @@ export default {
         name: await this.getName(),
         image: await this.getImage(breed), // Use await here
         linenumber: i,
+        distance: await this.getMiles(),
+        owner: await this.getOwner(),
       };
       this.dogs.push(data);
       console.log(this.dogs);

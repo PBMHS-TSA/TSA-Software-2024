@@ -1,4 +1,5 @@
 <template>
+  <div :id='"user" + id' style="">
   <div class="card" :id='"card" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
     <img :alt='"Dog" + id' :src="dogimage" />
     <h2>{{ name }}</h2>
@@ -7,13 +8,15 @@
     <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-4x" ></i></button>
     <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
   </div>
-  <div class="card" :id='"card" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
-    <img :alt='"Dog" + id' :src="dogimage" />
+
+  <div class="card" :id='"profile" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
+    <img :alt='"profile" + id' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
     <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-4x" ></i></button>
     <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
+  </div>
   </div>
 </template>
 <script>
@@ -64,12 +67,18 @@ export default {
     showNextCard() {
       
       const currentCard = document.getElementById(`card${window.stuffs.currentCardIndex}`);
+      const currentProfile = document.getElementById(`profile${window.stuffs.currentCardIndex}`);
+
       window.stuffs.currentCardIndex++;
       const nextCard = document.getElementById(`card${ window.stuffs.currentCardIndex}`);
+      const nextProfile = document.getElementById(`profile${window.stuffs.currentCardIndex}`);
+
       if (nextCard) {
         currentCard.style.display = 'none';
+        currentProfile.style.display = 'none';
 
         nextCard.style.display = 'block';
+        nextProfile.style.display = 'block';
       } else {
         this.$router.push({ name: 'Home'})
       }
