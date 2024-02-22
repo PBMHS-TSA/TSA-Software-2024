@@ -10,9 +10,8 @@
   </div>
 
   <div class="card" :id='"profile" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
-    <img :alt='"profile" + id' :src="dogimage" />
-    <h2>{{ name }}</h2>
-    <p>Age: {{ age }} Years</p>
+    <h2>{{ owner.name }}</h2>
+    <p>Age: {{ owner.age }} Years</p>
     <p>Breed: {{ breed }}</p>
     <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-4x" ></i></button>
     <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
