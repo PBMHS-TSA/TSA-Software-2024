@@ -1,15 +1,11 @@
 <template>
   <div class="container" v-if="dogs.length > 0">
     <div id="card-container">
-      <Suspense>
         <card v-for="dog in this.dogs" :key="dog.id" :visible="true" :age="dog.age"
           :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id"
           :name="dog.name" :linenumber="dog.linenumber"></card>
-        <template #fallback>
-          <p>Loading Image...</p>
-        </template>
-      </Suspense>
-    </div>
+
+23    </div>
   </div>
 </template>
 
