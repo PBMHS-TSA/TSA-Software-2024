@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+console.log(this.visible)
 window.stuffs = {
   currentCardIndex: 0,
   dislikeCount: 0,
