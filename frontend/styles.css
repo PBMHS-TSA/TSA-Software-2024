@@ -193,3 +193,7 @@ button.like {
 .dislike:active {
   color: #f74019;
 }
+.usercard {
+  display: inline-flex;
+
+}
