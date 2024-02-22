@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :id='"card" + linenumber' :style='(visible ? "" : "display:none;")'> <!--:ondragover="swipemobile"-->
+  <div class="card" :id='"card" + linenumber' :style='"display:" +(visible ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
     <img :alt='"Dog" + id' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
