@@ -24,11 +24,11 @@ export default {
       return await json.message;
     },
     async getOwner() {
-      const response = await fetch("https://api.namefake.com/english-united-states/female/");
+      const response = await fetch("https://randommer.io/Name/?type=fullname&number=1&X-Requested-With=XMLHttpRequest");
       const json = await response.json();
 
       let owner = {
-        name: json.name,
+        name: json[0],
         
       };
       return owner
