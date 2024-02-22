@@ -91,7 +91,6 @@ export default {
         distance: await this.getMiles(),
         owner: await this.getOwner(),
       };
-      data.description = await this.getDescription(data),
 
       this.dogs.push(data);
       console.log(this.dogs);
