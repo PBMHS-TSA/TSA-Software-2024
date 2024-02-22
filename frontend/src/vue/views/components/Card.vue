@@ -5,7 +5,7 @@
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
     <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-5x" ></i></button>
-    <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone-break"></i></button>
+    <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
   </div>
 </template>
 <script>
@@ -24,7 +24,7 @@ export default {
       console.log(event)
       if (action === 'dislike') {
         window.stuffs.dislikeCount++; 
-      } else if (action === 'like') {
+      } else if (action === 'like') { 
         window.stuffs.likeCount++;
 
         if (window.stuffs.likeCount === Math.floor(Math.random() * 20)) {
