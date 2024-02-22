@@ -1,5 +1,4 @@
 <template>
-  <script src="https://kit.fontawesome.com/89cb614f22.js" crossorigin="anonymous"></script>
   <nav style="margin-bottom: 1%">
     <div class="nav-wrapper indigo">
       <img style="height: auto; width: auto; max-height: -webkit-fill-available" src="https://tsaweb.org/images/default-source/competitions-programs/program-logos/tsa-logoff2c085a4556450589a0a1a426c8e98f.png?sfvrsn=63b79446_0" class="center brand-logo" />

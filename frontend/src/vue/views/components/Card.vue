@@ -23,7 +23,7 @@ export default {
       let action = 'like'
       console.log(event)
       if (action === 'dislike') {
-        window.stuffs.dislikeCount++;
+        window.stuffs.dislikeCount++; 
       } else if (action === 'like') {
         window.stuffs.likeCount++;
 
