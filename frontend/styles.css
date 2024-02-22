@@ -183,3 +183,14 @@ button.dislike, button.like {
     cursor: pointer;
     background-color: transparent !important;
 }
+.like:active, .dislike:active {
+    border-width: 3px;
+
+}
+.like:active {
+    color: #4CAF50;
+
+  }
+  .dislike:active {
+    color: #FF5733;
+  }
