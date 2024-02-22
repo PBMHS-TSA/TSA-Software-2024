@@ -56,16 +56,13 @@ export default {
     async getBreed() {
       return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
     },
-    async getDescription() {
+    async getDescription(data) {
       const completion = await openai.chat.completions.create({
         messages: [
           {
             role: "system",
-            content: `write a short little description about the breed of a Kuvasz that is 8 years old and named Cruise 
- make it sound like a human wrote it
- make it a little more dumbed down 
- i dont want a description of the breed itself 
-dumb it down`,
+            content: `write a about a breed of dog that is ${data.breed}. The dogs name is ${data.dogname}, and he is ${data.age} years old. 
+            make 1 explanation talking about the dog and its behavior, and make each description vary from 100 to 300 words.`,
           },
         ],
         model: "gpt-3.5-turbo",
@@ -90,8 +87,9 @@ dumb it down`,
         linenumber: i,
         distance: await this.getMiles(),
         owner: await this.getOwner(),
-        description: await this.getDescription(),
       };
+      data.description = await this.getDescription(data),
+
       this.dogs.push(data);
       console.log(this.dogs);
     }
