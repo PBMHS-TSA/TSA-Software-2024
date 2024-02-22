@@ -179,7 +179,7 @@
 .dislike i {
     color: #FF5733;
 }
-.dislike,.like {
+button.dislike, button.like {
     cursor: pointer;
-    background-color: transparent;
+    background-color: transparent !important;
 }
