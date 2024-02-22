@@ -7,6 +7,11 @@
 </template>
 
 <script>
+import OpenAI from "openai";
+
+const openai = new OpenAI();
+
+
 import Card from "./components/Card.vue";
 import { dogbreeds, dognames } from "./helper.js";
 
@@ -53,6 +58,21 @@ return roundedRandomNumber;
     async getBreed() {
       return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
     },
+  },
+  async getDescription() {
+    const completion = await openai.chat.completions.create({
+    messages: [{ role: "system", content: `write a short little description about the breed of a Kuvasz that is 8 years old and named Cruise 
+ make it sound like a human wrote it
+ make it a little more dumbed down 
+ i dont want a description of the breed itself 
+dumb it down` }],
+    model: "gpt-3.5-turbo",
+  });
+
+  console.log(completion.choices[0]);
+
+  //return completion.choices[0];
+
   },
   async created() {
     for (let i = 0; i < this.amount; i++) {

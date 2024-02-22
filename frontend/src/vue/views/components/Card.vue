@@ -13,8 +13,8 @@
     <h2>{{ owner.name }}</h2>
     <p>Age: {{ owner.age }} Years</p>
     <p>Breed: {{ breed }}</p>
-    <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-4x" ></i></button>
-    <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
+    <p>Distance: {{ distance }} Miles</p>
+    <p>Description: {{ description }}</p>
   </div>
   </div>
 </template>
@@ -93,6 +93,7 @@ export default {
     linenumber: Number,
     owner: Object,
     distance: Number,
+    description:String,
 
 
 
