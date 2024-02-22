@@ -4,8 +4,8 @@
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
     <p>Breed: {{ breed }}</p>
-    <button :onclick="swipe" class="like">Like</button>
-    <button :onclick="swipe" class="dislike">Dislike</button>
+    <button :onclick="swipe" class="like"><font-awesome-icon :icon="['fas', 'bone']" /></button>
+    <button :onclick="swipe" class="dislike"><font-awesome-icon :icon="['fas', 'bone-break']" /></button>
   </div>
 </template>
 <script>
