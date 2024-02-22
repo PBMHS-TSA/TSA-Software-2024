@@ -9,7 +9,7 @@
     <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
   </div>
 
-  <div class="card" :id='"profile" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
+  <div class="cardprofile" :id='"profile" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
     <h2>{{ owner.name }}</h2>
     <p>Age: {{ owner.age }} Years</p>
     <p>Breed: {{ breed }}</p>

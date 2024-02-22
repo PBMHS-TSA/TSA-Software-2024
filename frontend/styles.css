@@ -12,8 +12,16 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   text-align: center;
+  margin-right:10%;
 }
-
+.cardprofile {
+    width: 300px;
+    padding: 20px;
+    background-image: linear-gradient(to left, #ebbc07, #e88c07);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+  }
 .card img {
   max-width: 100%;
   border-radius: 8px;
