@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-if="dogs.length > 0">
     <div id="card-container">
-      <card v-for="dog in this.dogs" :key="dog.id" :visible="(dog.id==this.dogs[0].id ? false : true )" :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name" :linenumber="dog.linenumber"></card>
+      <card v-for="dog in this.dogs" :key="dog.id"  :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name" :linenumber="dog.linenumber"></card>
     </div>
   </div>
 </template>

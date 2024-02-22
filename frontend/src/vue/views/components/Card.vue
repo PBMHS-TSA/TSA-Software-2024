@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :id='"card" + linenumber' :style='"display:" +(visible ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
+  <div class="card" :id='"card" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
     <img :alt='"Dog" + id' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
@@ -9,7 +9,6 @@
   </div>
 </template>
 <script>
-console.log(this.visible)
 window.stuffs = {
   currentCardIndex: 0,
   dislikeCount: 0,
@@ -69,7 +68,6 @@ export default {
   },
   name: "Card",
   props: {
-    visible: Boolean,
     id: Number,
     name: String,
     age: Number,
