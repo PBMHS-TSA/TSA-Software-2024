@@ -24,7 +24,7 @@ export default {
       return await json.message;
     },
     async getOwner() {
-      const response = await fetch("https://randommer.io/Name/?type=fullname&number=1&X-Requested-With=XMLHttpRequest");
+      const response = await fetch("https://randommer.io/Name/?type=fullname&number=1&X-Requested-With=XMLHttpRequest",{method: 'POST'});
       const json = await response.json();
 
       let owner = {
