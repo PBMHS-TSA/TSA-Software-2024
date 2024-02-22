@@ -9,7 +9,7 @@
 <script>
 import OpenAI from "openai";
 
-const openai = new OpenAI({apiKey: "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"});
+const openai = new OpenAI({apiKey: "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",dangerouslyAllowBrowser:true});
 
 
 import Card from "./components/Card.vue";
