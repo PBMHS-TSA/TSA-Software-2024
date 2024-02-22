@@ -8,6 +8,8 @@
         <li><router-link to="/mf">Dashboard</router-link></li>
 
         <li><router-link to="/chats">Messages</router-link></li>
+        <li><router-link to="/map">Map</router-link></li>
+
         <li><a :onclick="logout">Logout</a></li>
       </ul>
     </div>
