@@ -1,11 +1,8 @@
 <template>
   <div class="container" v-if="dogs.length > 0">
     <div id="card-container">
-        <card v-for="dog in this.dogs" :key="dog.id" :visible="true" :age="dog.age"
-          :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id"
-          :name="dog.name" :linenumber="dog.linenumber"></card>
-
-23    </div>
+      <card v-for="dog in this.dogs" :key="dog.id" :visible="(dog.id==this.dogs[0].id ? false : true )" :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name" :linenumber="dog.linenumber"></card>
+    </div>
   </div>
 </template>
 
@@ -16,8 +13,8 @@ import { dogbreeds, dognames } from "./helper.js";
 export default {
   data() {
     return {
-      amount: 5,// Math.floor(Math.random() * 5) + 1,
-      dogs: []
+      amount: 5, // Math.floor(Math.random() * 5) + 1,
+      dogs: [],
     };
   },
   methods: {
@@ -34,28 +31,26 @@ export default {
     },
     async getBreed() {
       return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
-    }, 
-    
-
+    },
   },
   async created() {
     for (let i = 0; i < this.amount; i++) {
       const breed = await this.getBreed(); // Fetch breed first
 
-      const data = {  
+      const data = {
         id: Date.now(),
         age: await this.getAge(),
         breed: breed,
         name: await this.getName(),
         image: await this.getImage(breed), // Use await here
-        linenumber: i
+        linenumber: i,
       };
       this.dogs.push(data);
-      console.log(this.dogs)
+      console.log(this.dogs);
     }
   },
   components: {
-    Card
-  }
+    Card,
+  },
 };
 </script>
