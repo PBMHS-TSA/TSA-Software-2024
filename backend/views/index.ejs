@@ -1,292 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - TSA-Software</title>
-    <meta name="description" content="Home page">
+    <meta name="description" content="Home page" />
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" />
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+      .Menu {
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 125px;
+        clear: left;
+        background-color: rgb(67, 80, 175);
+      }
 
-        .Menu {
-            width: 100%;
-            padding-top: 5px;
-            padding-bottom: 125px;
-            clear: left;
-			background-color: rgb(67, 80, 175)
-        }
+      .Menu ul {
+        margin-top: 5%;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-left: 0px;
+        width: 100%;
+      }
 
-        .Menu ul {
-            margin-top: 5%;
-            margin-right: auto;
-            margin-bottom: 0px;
-            margin-left: auto;
-            padding-top: 0px;
-            padding-right: 0px;
-            padding-bottom: 15px;
-            padding-left: 0px;
-            width: 100%;
-        }
+      .Menu ul li {
+        list-style: none;
+        float: left;
+        margin-right: auto;
+        font-family: Black Ops One;
+        margin-left: auto;
+        text-align: center;
+        width: 25%;
+        transition: all 0.3s linear;
+        position: relative;
+        bottom: 40px;
+        font-size: 20px;
+      }
 
-        .Menu ul li {
-            list-style: none;
-            float: left;
-            margin-right: auto;
-            font-family: Black Ops One;
-            margin-left: auto;
-            text-align: center;
-            width: 25%;
-            transition: all 0.3s linear;
-			position: relative;
-			bottom: 40px;
-			font-size: 20px;
-			
-        }
+      .Menu ul a:hover {
+        color: darkgray;
+        cursor: pointer;
+        transition: 0.6s ease;
+      }
 
-        .Menu ul a:hover {
-            color: darkgray;
-            cursor: pointer;
-            transition: 0.6s ease;
-        }
-        
-        .Menu a {
-            color: White;
-            text-decoration: none;
-			font-size: 20px;
-            
-        }
+      .Menu a {
+        color: White;
+        text-decoration: none;
+        font-size: 20px;
+      }
 
-        .Title {
-            width: 100%;
-            font-family: Black Ops One;
-            text-align: center;
-            font-size: 50px;
-        }
-		
-		.Logo_IMG {
-			position: relative;
-			bottom: 15px
-		}
-		
-		.Overview{
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 5%;
-			text-align: center;
-		}
-		
-		.FAQs {
-			margin: auto;
-			padding-left: auto;
-			padding-right: auto;
-			background-color: white;
-			border: 5px solid black;
-			width: 70%;
-			border-radius: 30px;
-			margin-top: 5%;
-		}
+      .Title {
+        width: 100%;
+        font-family: Black Ops One;
+        text-align: center;
+        font-size: 50px;
+      }
 
-		.FAQs h1 {
-			margin-top: auto;
-			font-family: Black Ops One;
-			font-size: 40px;
-			text-align: center;
-			padding-top: 25px;
-		}
+      .Logo_IMG {
+        position: relative;
+        bottom: 15px;
+      }
 
-		.FAQs .Dropdown .dropbtn {
-			background-color: transparent;
-			text-align: right;
-			font-size: 30px;
-			font-family: Black Ops One;
-			border: none;
-			margin-bottom: 3%;
-			margin-left: auto;
-			margin-right: auto;
-		}
+      .Overview {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        text-align: center;
+      }
 
-		.Dropdown {
-			margin-left: auto;
-			margin-right: auto;
-			position: relative;
-  			display: block;
-			bottom: 20px;
-			width: inherit;
-		}
+      .FAQs {
+        margin: auto;
+        padding-left: auto;
+        padding-right: auto;
+        background-color: white;
+        border: 5px solid black;
+        width: 70%;
+        border-radius: 30px;
+        margin-top: 5%;
+      }
 
-		.FAQs .dropbtn:hover{
-			color: darkgray;
-			cursor: pointer;
-			transition: 0.3s ease;
-		}
+      .FAQs h1 {
+        margin-top: auto;
+        font-family: Black Ops One;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 25px;
+      }
 
-		.FAQs .Dropdown_Contents{
-			display: none;
-			position: relative;
-			text-align: center;
-			font-family: Black Ops One;
-			font-size: 25px;
-			margin-left: 5%;
-			margin-right: 5%;
-			margin-bottom: 2%;
-			bottom: 10px;
-		}
+      .FAQs .Dropdown .dropbtn {
+        background-color: transparent;
+        text-align: right;
+        font-size: 30px;
+        font-family: Black Ops One;
+        border: none;
+        margin-bottom: 3%;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-		.Dropdown .show{display:block;}
-		
-		.Instal button{
-			display: block;
-			font-size: 40px;
-			margin-bottom: 5%;
-			background-color: white;
-			border: 5px solid black;
-			font-family: Black Ops One;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 10%;
-			border-radius: 10px;
-			padding: 20px;
-		}
+      .Dropdown {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        display: block;
+        bottom: 20px;
+        width: inherit;
+      }
 
-		.Instal button:hover{
-			color: #525252;
-			cursor: pointer;
-			transition: 0.3s ease;
-		}
-		
-		.Footer {
-            width: 100%;
-			height: 125px;
-            clear: left;
-			background-color: rgb(67, 80, 175)
-        }
+      .FAQs .dropbtn:hover {
+        color: darkgray;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
 
-        .Footer ul {
-            margin-top: 10%;
-            margin-right: auto;
-            margin-bottom: 0px;
-            margin-left: auto;
-            padding-top: 0px;
-            padding-right: 0px;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            width: 100%;
-        }
+      .FAQs .Dropdown_Contents {
+        display: none;
+        position: relative;
+        text-align: center;
+        font-family: Black Ops One;
+        font-size: 25px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 2%;
+        bottom: 10px;
+      }
+      .FAQs .Dropdown_Contents-alt {
+        display: none;
+        position: relative;
+        font-family: Black Ops One;
+        font-size: 25px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 2%;
+        bottom: 10px;
+      }
 
-        .Footer ul li {
-            list-style: none;
-            float: left;
-            margin-right: auto;
-            font-family: Black Ops One;
-			font-size: 20px;
-            margin-left: auto;
-            text-align: center;
-            width: 25%;
-            transition: all 0.3s linear;
-			margin-top: 4%;
-			margin-bottom: auto;
-			position: relative;
-			bottom: 15px;
-        }
+      .Dropdown .show {
+        display: block;
+      }
 
-        .Footer ul a:hover {
-            color: darkgray;
-            cursor: pointer;
-            transition: 0.6s ease;
-        }
-        
-        .Footer a {
-            color: White;
-            text-decoration: none;
-			font-size: 20px;
-            
-        }
-		
-		body {
-			margin: 0;
-		}
+      .Instal button {
+        display: block;
+        font-size: 40px;
+        margin-bottom: 5%;
+        background-color: white;
+        border: 5px solid black;
+        font-family: Black Ops One;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        border-radius: 10px;
+        padding: 20px;
+      }
 
+      .Instal button:hover {
+        color: #525252;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .Footer {
+        width: 100%;
+        height: 125px;
+        clear: left;
+        background-color: rgb(67, 80, 175);
+      }
+
+      .Footer ul {
+        margin-top: 10%;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        width: 100%;
+      }
+
+      .Footer ul li {
+        list-style: none;
+        float: left;
+        margin-right: auto;
+        font-family: Black Ops One;
+        font-size: 20px;
+        margin-left: auto;
+        text-align: center;
+        width: 25%;
+        transition: all 0.3s linear;
+        margin-top: 4%;
+        margin-bottom: auto;
+        position: relative;
+        bottom: 15px;
+      }
+
+      .Footer ul a:hover {
+        color: darkgray;
+        cursor: pointer;
+        transition: 0.6s ease;
+      }
+
+      .Footer a {
+        color: White;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      body {
+        margin: 0;
+      }
     </style>
 
     <script>
-		function Button1() {
-			document.getElementById("Description_1").classList.toggle("show");
-		}
+      function Button1() {
+        document.getElementById("Description_1").classList.toggle("show");
+      }
 
-		function Button2() {
-			document.getElementById("Description_2").classList.toggle("show");
-		}
+      function Button2() {
+        document.getElementById("Description_2").classList.toggle("show");
+      }
 
-		function Button3() {
-			document.getElementById("Description_3").classList.toggle("show");
-		}
+      function Button3() {
+        document.getElementById("Description_3").classList.toggle("show");
+      }
 
-		function Button4() {
-			document.getElementById("Description_4").classList.toggle("show");
-		}
-	</script>
-</head>
+      function Button4() {
+        document.getElementById("Description_4").classList.toggle("show");
+      }
+    </script>
+  </head>
 
-<%- include("WebPage/EJS/navbar")%>
+  <%- include("WebPage/EJS/navbar")%>
 
-<body>
+  <body>
+    <div class="Overview" style="font-family: Comic Sans MS; font-size: 30px">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
 
-    
-    <div class="Overview" style="font-family: Comic Sans MS; font-size: 30px;">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
-	
-	
-	<div class="FAQs">
-				<h1>FAQs</h1>
-				
-				<div class = "Dropdown">
-					<button onClick="Button1()" class="dropbtn">1) How do you use the app?</button>
-					<div id="Description_1" class="Dropdown_Contents">
-						<p>Our app uses a system more like Tinder<br> with a swipe to like theme to match your pup with other </p>
-					</div>
-				</div>
-				
-				<div class = "Dropdown">
-					<button onClick="Button2()" class="dropbtn">2) What's the program's purpose?</button>
-					<div id="Description_2" class="Dropdown_Contents">
-						<p>(Answer)</p>
-					</div>
-				</div>
-				
-				<div class = "Dropdown">
-					<button onClick="Button3()" class="dropbtn">3) How much does our app cost</button>
-					<div id="Description_3" class="Dropdown_Contents">
-						<p>(Answer)</p>
-					</div>
-				</div>
-				
-				<div class = "Dropdown">
-					<button onClick="Button4()" class="dropbtn">4) Question 4</button>
-					<div id="Description_4" class="Dropdown_Contents">
-						<p>(Answer)</p>
-					</div>
-				</div>
-	</div>
-	
-	<div class="Instal">
-				<button onClick="">Install Now</button>
-		</div>
-	
-	<nav class="Footer">
-		<ul>
-			<li><a href="">Home</a></li>
-			<li><a href="">Login</a></li>
-			<li><a href="">Sign up</a></li>
-			<li>&copy; 2023 - (Company)</li>
-		</ul>
-	</nav>
+    <div class="FAQs">
+      <h1>FAQs</h1>
 
-</body>
+      <div class="Dropdown">
+        <button onClick="Button1()" class="dropbtn">1) How do you use the app? <nobr style="color:#E7BD1D">(Click Us)</nobr></button>
+        <div id="Description_1" class="Dropdown_Contents-alt">
+          <ul>
+            <li>1 Download the app</li>
+            <li>2 Create an account</li>
+            <li>3 Add your dog's information</li>
+            <li>4 Start swiping to find your dog's new best friend!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="Dropdown">
+        <button onClick="Button2()" class="dropbtn">2) What's the program's purpose?</button>
+        <div id="Description_2" class="Dropdown_Contents-alt">
+          <ul>
+            <li class="smallerfont">• Matching dogs with compatible playmates.</li>
+            <li class="smallerfont">• Locating nearby animal-friendly parks.</li>
+            <li class="smallerfont">• Providing services for hiring dog walkers or finding dog sitters.</li>
+            <li class="smallerfont">• Offering a platform for dog owners to socialize and arrange meetups for their pets.</li>
+            <p>Overall, the app aims to enhance the social and recreational experiences of dogs and their owners while also addressing practical needs such as pet care services.</p>
+          </ul>
+        </div>
+      </div>
+
+      <div class="Dropdown">
+        <button onClick="Button3()" class="dropbtn">3) How much does our app cost</button>
+        <div id="Description_3" class="Dropdown_Contents">
+          <p>
+            <b>Absolutely free!</b>
+            Enjoy our app's full functionality without any charges. Plus, take advantage of our convenient paid services to find trusted dog walkers or sitters, ensuring your furry friend gets the care they deserve.
+          </p>
+        </div>
+      </div>
+      <style>
+        ul li p.ml5 {
+          margin-left: 5%;
+        }
+        ul li p.ml10 {
+          margin-left: 10%;
+        }
+        .smallerfont {
+          font-size: 15px;
+        }
+      </style>
+      <div class="Dropdown">
+        <button onClick="Button4()" class="dropbtn">4) How it works</button>
+        <div id="Description_4" class="Dropdown_Contents-alt">
+          <ul>
+            <li>
+              <h>• Swipe Left or Right</h>
+              <p class="ml5 smallerfont">
+                - Swipe
+                <b>left</b>
+                to dislike a profile
+              </p>
+              <p class="ml5 smallerfont">
+                - Swipe
+                <b>right</b>
+                to like a profile
+              </p>
+            </li>
+            <li>
+              <h>• Tap to open Profile</h>
+              <p class="ml5 smallerfont">- If you're interested in knowing more about a profile, tap on the right side of the profile card.</p>
+              <p class="ml5 smallerfont">- This action will open up the detailed profile where you can view more information about the user and their dog.</p>
+            </li>
+            <li>
+              <h>• Navigation</h>
+              <p class="ml5 smallerfont">- Use the navigation bar or menu options to explore additional features such as searching for specific dog breeds, adjusting your preferences, or accessing messaging features.</p>
+            </li>
+            <li>
+              <h>• Matching</h>
+              <p class="ml5 smallerfont">- If both you and another user swipe right on each other's profiles, it's a match! You can then start messaging each other and plan a playdate for your dogs.</p>
+            </li>
+            <li>
+              <h>• Doggy Dates</h>
+              <p class="ml5 smallerfont">- Once you've connected with other dog owners, you can arrange meetups at local dog parks or other pet-friendly locations through the app's messaging or event planning features.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="Instal">
+      <button onClick="">Install Now</button>
+    </div>
+
+    <nav class="Footer">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Sign up</a></li>
+        <li>&copy; 2024 - (Company)</li>
+      </ul>
+    </nav>
+  </body>
 </html>
