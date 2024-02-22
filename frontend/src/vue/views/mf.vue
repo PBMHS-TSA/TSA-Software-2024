@@ -87,6 +87,7 @@ dumb it down` }],
         linenumber: i,
         distance: await this.getMiles(),
         owner: await this.getOwner(),
+        description: await this.getDescription(),
       };
       this.dogs.push(data);
       console.log(this.dogs);
