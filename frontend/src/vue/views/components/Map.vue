@@ -60,7 +60,7 @@ createMarker(lat,lng,icon, map) {
         // add UI
         H.ui.UI.createDefault(map, maptypes);
         // End rendering the initial map
-        this.createMarker(28.4820108,-81.4566075,"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Flocation-pin_2776067&psig=AOvVaw0VRpxByt9Q3O8KDPx_i7Bx&ust=1708734249029000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNj4-6GZwIQDFQAAAAAdAAAAABAE", map)
+        this.createMarker(28.4820108,-81.4566075,"https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png", map)
   // Add marker to the map
   window.maperer = map
       }
