@@ -33,7 +33,7 @@ export default {
 
       let owner = {
         name: json[0],
-        age: Math.floor(Math.random() * (80 - 18 + 1)) + 18;
+        age: Math.floor(Math.random() * (80 - 18 + 1)) + 18
       };
       return owner;
     },

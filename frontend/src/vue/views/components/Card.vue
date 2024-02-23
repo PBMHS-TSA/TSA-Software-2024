@@ -4,7 +4,7 @@
     <img :alt='"Dog" + id' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
-    <p>{{ gender }}</p>
+    <p>Gender: {{ gender }}</p>
 
     <p>Breed: {{ breed }}</p>
     <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-4x" ></i></button>
@@ -14,7 +14,7 @@
   <div class="cardprofile" :id='"profile" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
     <h2>{{ owner.name }}</h2>
     <p>Age: {{ owner.age }} Years</p>
-    <p>Breed: {{ breed }}</p>
+    <p>Age: {{ owner.gender }} Years</p>
     <p>Distance: {{ distance }} Miles</p>
     <p>Description: {{ description }}</p>
   </div>
