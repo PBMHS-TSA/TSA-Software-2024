@@ -75,7 +75,7 @@ export default {
 
         model: "gpt-3.5-turbo",
       });
-
+      
       console.log(completion.choices[0]);
 
       //return completion.choices[0];

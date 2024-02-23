@@ -14,7 +14,6 @@
   <div class="cardprofile" :id='"profile" + linenumber' :style='"display:" +(linenumber==0 ? "block" : "none;")'> <!--:ondragover="swipemobile"-->
     <h2>{{ owner.name }}</h2>
     <p>Age: {{ owner.age }} Years</p>
-    <p>Age: {{ owner.gender }} Years</p>
     <p>Distance: {{ distance }} Miles</p>
     <p>Description: {{ description }}</p>
   </div>
