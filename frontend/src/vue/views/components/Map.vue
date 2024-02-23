@@ -83,11 +83,11 @@ createMarker(lat,lng,icon, map,size) {
         // add UI
         H.ui.UI.createDefault(map, maptypes);
         let pins = {
-            location:"https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png",
-            shops: "https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/tom-fotor-bg-remover-20240222215654.png?alt=media&token=1323c06f-9e54-40bf-ad1d-2fdce7fa55fe",
-            goomer: "https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/Groomer_pin-removebg-preview.png?alt=media&token=c5ab06ab-4290-4df0-a440-785154d5f73a",
-            dogwalkers: "https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/walking_pin-removebg-preview.png?alt=media&token=91ef29f8-5c37-442e-874b-e1e7a4409462",
-            parks: "https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/Untitled_design__1_-removebg-preview.png?alt=media&token=4f312ad1-2bfc-421f-b480-511dea2767e2",  
+            location:"https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
+            shops: "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
+            goomer: "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
+            dogwalkers: "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
+            parks: "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
         }
         window.maperer = map
 
