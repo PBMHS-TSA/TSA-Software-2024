@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-if="dogs.length > 0">
     <div id="card-container">
-      <card v-for="dog in this.dogs" :key="dog.id" :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name" :linenumber="dog.linenumber" :owner="dog.owner" :distance="dog.distance"></card>
+      <card v-for="dog in this.dogs" :gender="dog.gender" :key="dog.id" :age="dog.age" :breed="dog.breed.charAt(0).toUpperCase() + dog.breed.slice(1)" :dogimage="dog.image" :id="dog.id" :name="dog.name" :linenumber="dog.linenumber" :owner="dog.owner" :distance="dog.distance"></card>
     </div>
   </div>
 </template>
@@ -56,6 +56,10 @@ export default {
     async getBreed() {
       return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
     },
+    async getGender() {
+      let math =  Math.floor(Math.random() * 13) + 1;
+      return (math == 1 ? "Male" :"Female")
+    },
     async getDescription(data) {
       const completion = await openai.chat.completions.create({
         messages: [
@@ -90,6 +94,7 @@ export default {
         linenumber: i,
         distance: await this.getMiles(),
         owner: await this.getOwner(),
+        gender: await this.getGender(),
       };
 
       this.dogs.push(data);

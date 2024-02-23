@@ -4,6 +4,8 @@
     <img :alt='"Dog" + id' :src="dogimage" />
     <h2>{{ name }}</h2>
     <p>Age: {{ age }} Years</p>
+    <p>{{ gender }}</p>
+
     <p>Breed: {{ breed }}</p>
     <button :onclick="swipe" class="like"><i class="fa-solid fa-bone fa-4x" ></i></button>
     <button :onclick="swipe" class="dislike"><i class="fa-solid fa-bone fa-4x"></i></button>
@@ -94,7 +96,7 @@ export default {
     owner: Object,
     distance: Number,
     description:String,
-
+    gender:String
 
 
   },
