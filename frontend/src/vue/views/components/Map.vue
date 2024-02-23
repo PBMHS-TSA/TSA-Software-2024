@@ -39,7 +39,7 @@
         // Instantiate (and display) a map object:
         var map = new H.Map(mapContainer, maptypes.vector.normal.map, {
           zoom: 10,
-          center: this.center
+          center: {lng:-81.4608452,lat:28.4862172}
           // center object { lat: 40.730610, lng: -73.935242 }
         });
   
