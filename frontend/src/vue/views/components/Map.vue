@@ -56,7 +56,7 @@
     methods: {
 createMarker(lat,lng,icon, map,size) {
     const marker = new H.map.Marker({lat: lat, lng: lng});
-        var pngIcon = new H.map.Icon(icon, {size: {w: size.width, h: size.height}});      
+        let pngIcon = new H.map.Icon(icon, {size: {w: size.width, h: size.height}});      
 
   marker.setIcon(pngIcon)
   map.addObject(marker);
@@ -89,6 +89,7 @@ createMarker(lat,lng,icon, map,size) {
             dogwalkers: "https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/walking_pin-removebg-preview.png?alt=media&token=91ef29f8-5c37-442e-874b-e1e7a4409462",
             parks: "https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/Untitled_design__1_-removebg-preview.png?alt=media&token=4f312ad1-2bfc-421f-b480-511dea2767e2",  
         }
+        window.maperer = map
 
         // End rendering the initial map28.49242972397546, -81.46890825104127
         this.createMarker(28.4820108,-81.4566075,pins.location, map, {width: 56, height: 56})
@@ -107,7 +108,6 @@ createMarker(lat,lng,icon, map,size) {
         this.createMarker(28.514888805984743, -81.43441856480727,pins.parks, map, {width: 56, height: 56})
 
         // Add marker to the map
-  window.maperer = map
       }
     }
   };
