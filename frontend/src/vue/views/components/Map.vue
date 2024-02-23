@@ -61,6 +61,7 @@
   
   // Add marker to the map
   map.addObject(marker);
+  window.maperer = map
       }
     }
   };
