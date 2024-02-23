@@ -1,7 +1,7 @@
 <template>
   <nav style="margin-bottom: 1%">
     <div class="nav-wrapper indigo">
-      <img style="height: auto; width: auto; max-height: -webkit-fill-available" src="https://tsaweb.org/images/default-source/competitions-programs/program-logos/tsa-logoff2c085a4556450589a0a1a426c8e98f.png?sfvrsn=63b79446_0" class="center brand-logo" />
+      <img style="height: auto; width: auto; max-height: -webkit-fill-available" src="https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/logo.png?alt=media&token=03163384-242a-4530-9d14-3409521b721a" class="center brand-logo" />
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/profile">Profile</router-link></li>

@@ -31,9 +31,9 @@
       this.initializeHereMap();
     },
     methods: {
-createMarker(lat,lng,icon, map) {
+createMarker(lat,lng,icon, map,size) {
     const marker = new H.map.Marker({lat: lat, lng: lng});
-        var pngIcon = new H.map.Icon(icon);      
+        var pngIcon = new H.map.Icon(icon, {size: {w: size.width, h: size.height}});      
 
   marker.setIcon(pngIcon)
   map.addObject(marker);
@@ -60,7 +60,7 @@ createMarker(lat,lng,icon, map) {
         // add UI
         H.ui.UI.createDefault(map, maptypes);
         // End rendering the initial map
-        this.createMarker(28.4820108,-81.4566075,"https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png", map)
+        this.createMarker(28.4820108,-81.4566075,"https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png", map, {width: 56, height: 56})
   // Add marker to the map
   window.maperer = map
       }
