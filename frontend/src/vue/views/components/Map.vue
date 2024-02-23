@@ -1,6 +1,7 @@
 
 <template>
     <div id="map">
+        
     <!--In the following div the HERE Map will render-->
       <div id="mapContainer" style="height:600px;width:100%" ref="hereMap"></div>
     </div>
@@ -19,6 +20,11 @@
         apikey: "j0QxHumNVhmcu8MHfAh8Ag-HSn4cZ4z4NScpNELwce0"
         // You can get the API KEY from developer.here.com
       };
+    },
+    methods: {
+        createMarker(map, lat, lng) {
+            
+        }
     },
     async mounted() {
       // Initialize the platform object:
@@ -51,6 +57,10 @@
         // add UI
         H.ui.UI.createDefault(map, maptypes);
         // End rendering the initial map
+        const marker = new H.map.Marker({lat: 28.4862172, lng: -81.4608452});
+  
+  // Add marker to the map
+  map.addObject(marker);
       }
     }
   };
