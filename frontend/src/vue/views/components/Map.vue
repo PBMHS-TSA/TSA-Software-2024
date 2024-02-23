@@ -85,7 +85,7 @@ createMarker(lat,lng,icon, map,size) {
         let pins = {
             location:"https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
             shops: "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
-            goomer: "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
+            groomer: "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
             dogwalkers: "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
             parks: "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
         }

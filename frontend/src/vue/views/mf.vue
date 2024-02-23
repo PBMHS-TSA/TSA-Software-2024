@@ -38,7 +38,7 @@ export default {
     },
     async getMiles() {
       // Generate a random number between 0 and 10 with decimals
-      var randomNumber = Math.random() * 10;
+      var randomNumber = Math.random() * 6;
       console.log(randomNumber); // Output a random number between 0 and 10 (exclusive)
 
       // If you want to limit the number of decimal places, you can use toFixed() method
