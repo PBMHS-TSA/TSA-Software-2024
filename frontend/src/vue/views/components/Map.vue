@@ -21,11 +21,7 @@
         // You can get the API KEY from developer.here.com
       };
     },
-    methods: {
-        createMarker(map, lat, lng) {
-            
-        }
-    },
+    
     async mounted() {
       // Initialize the platform object:
       const platform = new window.H.service.Platform({
@@ -35,6 +31,13 @@
       this.initializeHereMap();
     },
     methods: {
+createMarker(lat,lng,icon, map) {
+    const marker = new H.map.Marker({lat: lat, lng: lng});
+        var pngIcon = new H.map.Icon(icon);      
+
+  marker.setIcon(pngIcon)
+  map.addObject(marker);
+},
       initializeHereMap() { // rendering map
   
         const mapContainer = this.$refs.hereMap;
@@ -45,7 +48,7 @@
         // Instantiate (and display) a map object:
         var map = new H.Map(mapContainer, maptypes.vector.normal.map, {
           zoom: 10,
-          center: {lng:-81.4608452,lat:28.4862172}
+          center: {lng:-81.4566075,lat:28.4820108}
           // center object { lat: 40.730610, lng: -73.935242 }
         });
   
@@ -57,10 +60,8 @@
         // add UI
         H.ui.UI.createDefault(map, maptypes);
         // End rendering the initial map
-        const marker = new H.map.Marker({lat: 28.4862172, lng: -81.4608452});
-  
+        this.createMarker(28.4820108,-81.4566075,"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Flocation-pin_2776067&psig=AOvVaw0VRpxByt9Q3O8KDPx_i7Bx&ust=1708734249029000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNj4-6GZwIQDFQAAAAAdAAAAABAE", map)
   // Add marker to the map
-  map.addObject(marker);
   window.maperer = map
       }
     }
