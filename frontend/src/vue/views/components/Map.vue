@@ -85,9 +85,9 @@ createMarker(lat,lng,icon, map,size) {
         // add UI
         H.ui.UI.createDefault(map, maptypes);
         let pins = {
-            location:,
-            shops:
-            pet
+            location:"https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png",
+            shops: "https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png",
+            pet: "https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png"
         }
         // End rendering the initial map
         this.createMarker(28.4820108,-81.4566075,"https://static.vecteezy.com/system/resources/previews/009/590/005/original/location-location-pin-location-icon-transparent-free-png.png", map, {width: 56, height: 56})
