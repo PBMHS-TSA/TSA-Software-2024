@@ -33,6 +33,7 @@ export default {
 
       let owner = {
         name: json[0],
+        age: this.getAge(18)+18
       };
       return owner;
     },
@@ -47,8 +48,8 @@ export default {
       console.log(roundedRandomNumber); // Output a random number with 2 decimal places
       return roundedRandomNumber;
     },
-    async getAge() {
-      return Math.floor(Math.random() * 13) + 1;
+    async getAge(int) {
+      return Math.floor(Math.random() * int) + 1;
     },
     async getName() {
       return dognames[Math.floor(Math.random() * dognames.length)];
@@ -87,7 +88,7 @@ export default {
 
       const data = {
         id: Date.now(),
-        age: await this.getAge(),
+        age: await this.getAge(13),
         breed: breed,
         name: await this.getName(),
         image: await this.getImage(breed), // Use await here
