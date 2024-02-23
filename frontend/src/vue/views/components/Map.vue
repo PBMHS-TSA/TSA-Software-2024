@@ -1,12 +1,11 @@
 
 <template>
-    <div style="display: inline-flex">
     <div id="map">
         
     <!--In the following div the HERE Map will render-->
       <div id="mapContainer" style="height:600px;width:100%" ref="hereMap"></div>
     </div>
-    <table>
+    <!--<table>
         <thead>
           <tr>
               <th>Name</th>
@@ -28,8 +27,7 @@
             <td>0.8 Miles</td>
           </tr>
         </tbody>
-      </table>
-    </div>
+      </table>-->
   </template>
   
   <script>
