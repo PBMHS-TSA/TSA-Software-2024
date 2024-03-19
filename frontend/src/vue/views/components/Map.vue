@@ -55,7 +55,7 @@ export default {
       
       // Instantiate (and display) a map object:
       const map = new H.Map(mapContainer, maptypes.vector.normal.map, {
-        zoom: 25,
+        zoom: 14,
         center: { lat: lat, lng: lng }
       });
 
