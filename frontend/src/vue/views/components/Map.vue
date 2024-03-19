@@ -27,11 +27,11 @@ export default {
     this.platform = platform;
     if ("geolocation" in navigator) {
   // Request the current position
-   navigator.geolocation.getCurrentPosition( function(position) {
+   navigator.geolocation.getCurrentPosition( (position) => {
     // Retrieve latitude and longitude from the position object
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
-    initializeHereMap(latitude,longitude);
+    this.initializeHereMap(latitude,longitude);
 
     // Do something with the latitude and longitude, such as displaying them on the webpage
     console.log("Latitude: " + latitude + ", Longitude: " + longitude);
@@ -43,6 +43,7 @@ export default {
   // Geolocation is not supported by the browser
   console.error("Geolocation is not supported by this browser.");
 }
+
   },
   methods: {
     async initializeHereMap(lat,lng) {
@@ -80,6 +81,7 @@ export default {
 
       // Display POIs on the map
       data.results.items.forEach(place => {
+        console.log(place)
         const marker = new H.map.Marker({
           lat: place.position[0],
           lng: place.position[1]
