@@ -85,7 +85,12 @@ export default {
       this.createMarker(lat, lng,pins.location, map, {width: 56, height: 56})
       // Fetch points of interest using HERE Places API
       const response = await fetch(
-        `https://places.ls.hereapi.com/places/v1/discover/around?at=28.4820108,-81.4566075&apiKey=${this.apikey}`
+        `https://cors-anywhere.herokuapp.com/https://places.ls.hereapi.com/places/v1/discover/around?at=28.4820108,-81.4566075&apiKey=${this.apikey}`,
+        {
+          headers: {
+            "X-Requested-With": "XMLHttpRequest"
+          }
+        }
       );
 
       if (!response.ok) {
