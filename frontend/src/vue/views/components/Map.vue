@@ -46,6 +46,13 @@ export default {
 
   },
   methods: {
+    createMarker(lat,lng,icon, map,size) {
+    const marker = new H.map.Marker({lat: lat, lng: lng});
+        let pngIcon = new H.map.Icon(icon, {size: {w: size.width, h: size.height}});      
+
+  marker.setIcon(pngIcon)
+  map.addObject(marker);
+},
     async initializeHereMap(lat,lng) {
       const mapContainer = this.$refs.hereMap;
       const H = window.H;
@@ -58,6 +65,7 @@ export default {
         zoom: 10,
         center: { lat: lat, lng: lng }
       });
+      
 
       addEventListener("resize", () => map.getViewPort().resize());
 
@@ -66,7 +74,15 @@ export default {
 
       // Add UI
       H.ui.UI.createDefault(map, maptypes);
+      let pins = {
+            location:"https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
+            shops: "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
+            groomer: "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
+            dogwalkers: "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
+            parks: "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
+        }
 
+      this.createMarker(lat, lng,pins.location, map, {width: 56, height: 56})
       // Fetch points of interest using HERE Places API
       const response = await fetch(
         `https://places.ls.hereapi.com/places/v1/discover/around?at=28.4820108,-81.4566075&apiKey=${this.apikey}`
@@ -88,6 +104,8 @@ export default {
         });
         map.addObject(marker);
       });
+      window.maperer = map
+
     }
   }
 };
