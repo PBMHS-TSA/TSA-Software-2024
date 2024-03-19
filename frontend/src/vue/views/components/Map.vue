@@ -25,22 +25,14 @@ export default {
       apikey: this.apikey
     });
     this.platform = platform;
-    this.initializeHereMap();
-  },
-  methods: {
-    async initializeHereMap() {
-      const mapContainer = this.$refs.hereMap;
-      const H = window.H;
-
-      // Obtain the default map types from the platform object
-      const maptypes = this.platform.createDefaultLayers();
-      if ("geolocation" in navigator) {
+    if ("geolocation" in navigator) {
   // Request the current position
-  navigator.geolocation.getCurrentPosition(function(position) {
+   navigator.geolocation.getCurrentPosition( function(position) {
     // Retrieve latitude and longitude from the position object
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
-    
+    this.initializeHereMap(latitude,longitude);
+
     // Do something with the latitude and longitude, such as displaying them on the webpage
     console.log("Latitude: " + latitude + ", Longitude: " + longitude);
   }, function(error) {
@@ -51,6 +43,15 @@ export default {
   // Geolocation is not supported by the browser
   console.error("Geolocation is not supported by this browser.");
 }
+  },
+  methods: {
+    async initializeHereMap(lat,long) {
+      const mapContainer = this.$refs.hereMap;
+      const H = window.H;
+
+      // Obtain the default map types from the platform object
+      const maptypes = this.platform.createDefaultLayers();
+      
       // Instantiate (and display) a map object:
       const map = new H.Map(mapContainer, maptypes.vector.normal.map, {
         zoom: 5,
