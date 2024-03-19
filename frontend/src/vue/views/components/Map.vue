@@ -45,7 +45,7 @@ export default {
 }
   },
   methods: {
-    async initializeHereMap(lat,long) {
+    async initializeHereMap(lat,lng) {
       const mapContainer = this.$refs.hereMap;
       const H = window.H;
 
@@ -55,7 +55,7 @@ export default {
       // Instantiate (and display) a map object:
       const map = new H.Map(mapContainer, maptypes.vector.normal.map, {
         zoom: 5,
-        center: { lat: latitude, lng: longitude }
+        center: { lat: lat, lng: lng }
       });
 
       addEventListener("resize", () => map.getViewPort().resize());
