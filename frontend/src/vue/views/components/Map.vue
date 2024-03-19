@@ -31,7 +31,7 @@ export default {
     // Retrieve latitude and longitude from the position object
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
-    this.initializeHereMap(latitude,longitude);
+    initializeHereMap(latitude,longitude);
 
     // Do something with the latitude and longitude, such as displaying them on the webpage
     console.log("Latitude: " + latitude + ", Longitude: " + longitude);
