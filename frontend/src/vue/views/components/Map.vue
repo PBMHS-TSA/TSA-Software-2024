@@ -76,10 +76,10 @@ export default {
       window.maperer = map;
       let pins = {
             "location":"https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
-            "pet-store": "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
-            "dog-groomer": "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
+            "petStores": "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
+            "groomers": "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
             "dogwalkers": "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
-            "dog-park": "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
+            "parks": "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
         }
 
       this.createMarker(lat, lng,pins.location, map, {width: 56, height: 56})
@@ -100,7 +100,7 @@ export default {
       }
     },
     async fetchDogCarePlaces(category, lat, lng) {
-      const url = `https://discover.search.hereapi.com/v1/discover?at=${lat},${lng}&q=${category}&limit=10&apiKey=${this.apikey}`;
+      const url = `https://discover.search.hereapi.com/v1/discover?at=${lat},${lng}&q=${category}&limit=30&apiKey=${this.apikey}`;
       try {
         const response = await fetch(url);
         const data = await response.json();
