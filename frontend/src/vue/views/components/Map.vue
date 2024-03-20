@@ -31,7 +31,7 @@ export default {
           // Do something with the latitude and longitude, such as displaying them on the webpage
           console.log("Latitude: " + latitude + ", Longitude: " + longitude);
         },
-        function(error) {
+        function (error) {
           // Handle errors, such as the user denying permission or if the browser does not support geolocation
           console.error("Error getting the current position:", error);
         }
@@ -54,16 +54,16 @@ export default {
 
       // Initialize the platform object:
       this.platform = new H.service.Platform({
-        apikey: this.apikey
+        apikey: this.apikey,
       });
 
       // Obtain the default map types from the platform object
       const maptypes = this.platform.createDefaultLayers();
 
       // Instantiate (and display) a map object:
-      const map = new H.Map(mapContainer, maptypes.vector.normal.map, {
+      const map = new H.Map(mapxContainer, maptypes.vector.normal.map, {
         zoom: 10,
-        center: { lat: lat, lng: lng }
+        center: { lat: lat, lng: lng },
       });
 
       addEventListener("resize", () => map.getViewPort().resize());
@@ -75,27 +75,36 @@ export default {
       H.ui.UI.createDefault(map, maptypes);
       window.maperer = map;
       let pins = {
-            "location":"https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
-            "petStores": "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
-            "groomers": "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
-            "dogwalkers": "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
-            "parks": "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
-        }
+        location: "https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
+        petStores: "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
+        groomers: "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
+        dogwalkers: "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
+        parks: "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",
+      };
 
-      this.createMarker(lat, lng,pins.location, map, {width: 56, height: 56})
+      this.createMarker(lat, lng, pins.location, map, { width: 56, height: 56 });
       // Fetch points of interest using HERE Geocoding & Search API v7
       const categories = {
         parks: "dog-park",
         groomers: "dog-groomer",
-        petStores: "pet-store"
+        petStores: "pet-store",
       };
 
       for (const category of Object.keys(categories)) {
-        console.log(category)
+        console.log(category);
         const places = await this.fetchDogCarePlaces(category, lat, lng);
-        places.forEach(place => {
-          console.log(place)
-          this.createMarker(place.position.lat, place.position.lng, pins[category], map, { width: 56, height: 56 });
+        places.forEach((place) => {
+          if (category === "petStores") {
+            // Check if the pet store also offers grooming services
+            const isGroomer = place.categories.some((category) => category.id === "dog-groomer");
+            if (isGroomer) {
+              this.createMarker(place.position.lat, place.position.lng, pins.groomer, map, { width: 56, height: 56 });
+            } else {
+              this.createMarker(place.position.lat, place.position.lng, pins[category], map, { width: 56, height: 56 });
+            }
+          } else {
+            this.createMarker(place.position.lat, place.position.lng, pins[category], map, { width: 56, height: 56 });
+          }
         });
       }
     },
@@ -109,8 +118,8 @@ export default {
         console.error(`Error fetching ${category}:`, error);
         return [];
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
