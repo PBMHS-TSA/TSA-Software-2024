@@ -94,7 +94,7 @@ export default {
         const places = await this.fetchDogCarePlaces(category, lat, lng);
         places.forEach(place => {
           console.log(place)
-          this.createMarker(place.position[0], place.position[1], pins[category], map, { width: 56, height: 56 });
+          this.createMarker(place.position.lat, place.position.lng, pins[category], map, { width: 56, height: 56 });
         });
       }
     },
