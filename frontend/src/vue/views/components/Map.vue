@@ -91,6 +91,7 @@ export default {
       };
 
       for (const category of Object.keys(categories)) {
+        console.log(category)
         const places = await this.fetchDogCarePlaces(category, lat, lng);
         places.forEach(place => {
           console.log(place)
