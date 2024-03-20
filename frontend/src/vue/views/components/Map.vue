@@ -61,7 +61,7 @@ export default {
       const maptypes = this.platform.createDefaultLayers();
 
       // Instantiate (and display) a map object:
-      const map = new H.Map(mapxContainer, maptypes.vector.normal.map, {
+      const map = new H.Map(mapContainer, maptypes.vector.normal.map, {
         zoom: 10,
         center: { lat: lat, lng: lng },
       });
