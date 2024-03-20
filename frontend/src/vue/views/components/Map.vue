@@ -75,11 +75,11 @@ export default {
       H.ui.UI.createDefault(map, maptypes);
       window.maperer = map;
       let pins = {
-            location:"https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
-            shops: "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
-            groomer: "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
-            dogwalkers: "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
-            parks: "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
+            "location":"https://i.ibb.co/Fh7GNsy/location-location-pin-location-icon-transparent-free-png.png",
+            "pet-store": "https://i.ibb.co/1vXMzNK/tom-fotor-bg-remover-20240222215654.png",
+            "dog-groomer": "https://i.ibb.co/N3S6xQP/Groomer-pin-removebg-preview.png",
+            "dogwalkers": "https://i.ibb.co/PYFC9M3/walking-pin-removebg-preview.png",
+            "dog-park": "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",  
         }
 
       this.createMarker(lat, lng,pins.location, map, {width: 56, height: 56})
@@ -93,6 +93,7 @@ export default {
       for (const category of Object.keys(categories)) {
         const places = await this.fetchDogCarePlaces(category, lat, lng);
         places.forEach(place => {
+          console.log(place)
           this.createMarker(place.position[0], place.position[1], pins[category], map, { width: 56, height: 56 });
         });
       }
