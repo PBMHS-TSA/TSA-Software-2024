@@ -97,6 +97,7 @@ export default {
           if (category === "petStores") {
             // Check if the pet store also offers grooming services
             const isGroomer = place.categories.some((category) => category.id === "dog-groomer");
+            console.log(places.categories)
             if (isGroomer) {
               this.createMarker(place.position.lat, place.position.lng, pins.groomer, map, { width: 56, height: 56 });
             } else {
