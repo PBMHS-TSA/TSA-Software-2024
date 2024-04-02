@@ -11,6 +11,10 @@ export class Creds {
   getStorage() {
     return window.localStorage;
   }
+  /**
+   * saves the users data in storage
+   * @param {JSON} userData 
+   */
   saveData(userData) {
     if (userData.constructor != {}.constructor) userData = JSON.parse(userData);
 
@@ -20,13 +24,25 @@ export class Creds {
     this.getStorage().setItem("email", userData.email);
     this.getStorage().setItem("userId", userData.userId);
   }
+  /**
+   * saves the data to storage
+   * @param {string} username 
+   * @param {string} password 
+   * @param {string} email 
+   * @param {string} userId 
+   */
   SaveData(username, password, email, userId) {
     let user = { username: username, password: password, email: email, userId: userId };
     this.saveData(user);
   }
+  /**
+   * 
+   * @returns checks if any data is saved in storage
+   */
   hasData() {
     return this.getData() == undefined ? false : true;
   }
+  /** gets the users saved data */
   getData() {
     if (!this.getStorage().getItem("token")) return undefined;
     if (!this.getStorage().getItem("email")) return undefined;
@@ -39,15 +55,31 @@ export class Creds {
       userId: this.getStorage().getItem("userId"),
     };
   }
+  /**
+   * removes the users saved data
+   */
   removeData() {
     this.getStorage().removeItem("token");
     this.getStorage().removeItem("email");
   }
+  /**
+   * validates whether the users credentials are valid
+   * @param {function} callback 
+   */
   Validate(callback) {
-    socket.emit("validate user", {}, (response) => {
+    if (this.hasData()) {callback(false); return false }
+    socket.emit("validate user", this.getData(), (response) => {
       callback(response.valid);
+      return response.valid;
     });
   }
+  /**
+   * saves the user data in storage if the credentials are valid
+   * @param {String} username 
+   * @param {String} password 
+   * @param {String} email 
+   * @param {function} callback 
+   */
   AddCheck(username, password, email, callback) {
     if (email == "" || email == " ") email = undefined;
     socket.emit("validate user", { username, password, email }, (response) => {
@@ -59,7 +91,13 @@ export class Creds {
       else return response.valid;
     });
   }
-
+/**
+ * creates the users account in the database if all options are filled
+ * @param {String} username 
+ * @param {String} password 
+ * @param {String} email 
+ * @param {function} callback 
+ */
   CreateAccount(username, password, email, callback) {
     socket.emit("signup", { username: username, password: password, email: email }, (response) => {
       //console.log(response);

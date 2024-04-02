@@ -33,10 +33,13 @@ const router = createRouter({
       name: "Session Id",
       component: mf,
       beforeEnter: (to, from, next) => {
-        let id = to.params.token;
+        let token = to.params.token;
         if (token) {
-          atob(token);
-          CredentialManager.AddCheck();
+          let cred= atob(token).split(".");
+
+          CredentialManager.AddCheck(cred[0],cred[1],undefined, (res)=> {
+            
+          });
         }
         if (to.params.id === "123") {
           next();
