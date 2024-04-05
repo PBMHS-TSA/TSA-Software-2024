@@ -6,6 +6,7 @@ export class Creds {
     return btoa(data);
   }
   decodeBase64(data) {
+    
     return atob(data);
   }
   getStorage() {
@@ -78,7 +79,7 @@ export class Creds {
    * @param {String} username 
    * @param {String} password 
    * @param {String} email 
-   * @param {function} callback 
+   * @param {function} callback(boolean)
    */
   AddCheck(username, password, email, callback) {
     if (email == "" || email == " ") email = undefined;
@@ -96,7 +97,7 @@ export class Creds {
  * @param {String} username 
  * @param {String} password 
  * @param {String} email 
- * @param {function} callback 
+ * @param {function} callback(response)
  */
   CreateAccount(username, password, email, callback) {
     socket.emit("signup", { username: username, password: password, email: email }, (response) => {
