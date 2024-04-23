@@ -11,5 +11,5 @@
     </div>
     <textarea id="message-input" placeholder="Type your message..."></textarea>
     <button onclick="sendMessage()">Send</button>
-  </div>
+  </div>  
 </template>
