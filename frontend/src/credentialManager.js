@@ -6,7 +6,6 @@ export class Creds {
     return btoa(data);
   }
   decodeBase64(data) {
-    
     return atob(data);
   }
   getStorage() {
@@ -14,7 +13,7 @@ export class Creds {
   }
   /**
    * saves the users data in storage
-   * @param {JSON} userData 
+   * @param {JSON} userData
    */
   saveData(userData) {
     if (userData.constructor != {}.constructor) userData = JSON.parse(userData);
@@ -27,17 +26,17 @@ export class Creds {
   }
   /**
    * saves the data to storage
-   * @param {string} username 
-   * @param {string} password 
-   * @param {string} email 
-   * @param {string} userId 
+   * @param {string} username
+   * @param {string} password
+   * @param {string} email
+   * @param {string} userId
    */
   SaveData(username, password, email, userId) {
     let user = { username: username, password: password, email: email, userId: userId };
     this.saveData(user);
   }
   /**
-   * 
+   *
    * @returns checks if any data is saved in storage
    */
   hasData() {
@@ -65,10 +64,13 @@ export class Creds {
   }
   /**
    * validates whether the users credentials are valid
-   * @param {function} callback 
+   * @param {function} callback
    */
   Validate(callback) {
-    if (this.hasData()) {callback(false); return false }
+    if (this.hasData()) {
+      callback(false);
+      return false;
+    }
     socket.emit("validate user", this.getData(), (response) => {
       callback(response.valid);
       return response.valid;
@@ -76,9 +78,9 @@ export class Creds {
   }
   /**
    * saves the user data in storage if the credentials are valid
-   * @param {String} username 
-   * @param {String} password 
-   * @param {String} email 
+   * @param {String} username
+   * @param {String} password
+   * @param {String} email
    * @param {function} callback(boolean)
    */
   AddCheck(username, password, email, callback) {
@@ -92,13 +94,13 @@ export class Creds {
       else return response.valid;
     });
   }
-/**
- * creates the users account in the database if all options are filled
- * @param {String} username 
- * @param {String} password 
- * @param {String} email 
- * @param {function} callback(response)
- */
+  /**
+   * creates the users account in the database if all options are filled
+   * @param {String} username
+   * @param {String} password
+   * @param {String} email
+   * @param {function} callback(response)
+   */
   CreateAccount(username, password, email, callback) {
     socket.emit("signup", { username: username, password: password, email: email }, (response) => {
       //console.log(response);

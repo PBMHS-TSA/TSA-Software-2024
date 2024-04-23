@@ -20,15 +20,11 @@
 import { socket, CredentialManager } from "../globals";
 
 export default {
-  async mounted() {
-    // if (await CredentialManager.Validate()) {
-    //   this.$router.push("/chat")
-    // } else {
-    //   this.$router.push("/login")
-    // }
-  },
+  async mounted() {},
   methods: {
-    logout() {window.location.href= `http://localhost/socket/logout/${socket.id}`},
+    logout() {
+      window.location.href = `http://localhost/socket/logout/${socket.id}`;
+    },
   },
 };
 </script>

@@ -30,7 +30,7 @@ class User {
     if (this.username == undefined) return undefined;
     this.db.setLoginTime(this.username);
   }
-  getEmail() {  
+  getEmail() {
     if (this.username == undefined) return undefined;
     return this.db.getEmail(this.username);
   }
@@ -50,7 +50,7 @@ class User {
     }
   }
   removeUser() {
-    this.db.removeUser(this.username)
+    this.db.removeUser(this.username);
   }
 }
 

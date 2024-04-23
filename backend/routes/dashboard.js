@@ -18,12 +18,12 @@ function passInParams(usr) {
     email: us.getEmail(),
     lastLogin: us.getLastLogin(),
     lastlogin: {
-        years:us.getLastLogin()/1000/60/60/24/7/365,
-        weeks:us.getLastLogin()/1000/60/60/24/7,
-        days:us.getLastLogin()/1000/60/60/24,
-        hours: us.getLastLogin()/1000/60/60,
-        minutes:us.getLastLogin()/1000/60,
-        seconds: us.getLastLogin()/1000
+      years: us.getLastLogin() / 1000 / 60 / 60 / 24 / 7 / 365,
+      weeks: us.getLastLogin() / 1000 / 60 / 60 / 24 / 7,
+      days: us.getLastLogin() / 1000 / 60 / 60 / 24,
+      hours: us.getLastLogin() / 1000 / 60 / 60,
+      minutes: us.getLastLogin() / 1000 / 60,
+      seconds: us.getLastLogin() / 1000,
     },
     password: us.getPassword(),
   };

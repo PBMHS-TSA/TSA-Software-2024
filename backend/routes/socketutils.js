@@ -21,9 +21,9 @@ function passInParams(usr) {
 }
 
 router.get("/logout/:id", (req, res) => {
-    let id = req.params.id;
+  let id = req.params.id;
   res.clearCookie("token").clearCookie("username");
-delete socketsessions[id];
+  delete socketsessions[id];
   res.redirect("/");
 });
 router.get("/checktoken/:token/:sessionid", (req, res) => {

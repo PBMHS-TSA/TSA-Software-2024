@@ -6,21 +6,15 @@ const database = require("../database/database");
 const db = new database();
 const user = require("../user");
 const sgMail = require("@sendgrid/mail");
-const { Webhook } = require('discord-webhook-node');
+const { Webhook } = require("discord-webhook-node");
 const hook = new Webhook("https://discord.com/api/webhooks/1071112534276448386/6rvviRE88luH4QHvzYElF9EL4ilYPRz1xdbRINK8idJmsZxl6UNyEUOVygJ-IhBHvqKk");
 
-const {
-  ensureAuth,
-  ensureGuest,
-  ensureAdmin,
-  POSTEnsureAdmin,
-  POSTEnsureAuth,
-  POSTEnsureGuest,
-} = require("../middleware/auth"); // ensures the user is a Guest Admin or is authenticated
+const { ensureAuth, ensureGuest, ensureAdmin, POSTEnsureAdmin, POSTEnsureAuth, POSTEnsureGuest } = require("../middleware/auth"); // ensures the user is a Guest Admin or is authenticated
 function sendWebhook(message) {
-    hook.send(message)
+  hook.send(message);
 }
-function passInParams(usr) {// params passed into the ejspages
+function passInParams(usr) {
+  // params passed into the ejspages
   let us = new user(db, usr);
   return {
     token: us.getToken(),
@@ -30,13 +24,13 @@ function passInParams(usr) {// params passed into the ejspages
     email: us.getEmail(),
     lastLogin: us.getLastLogin(),
     lastlogin: {
-            years:us.getLastLogin()/1000/60/60/24/7/365,
-            weeks:us.getLastLogin()/1000/60/60/24/7,
-            days:us.getLastLogin()/1000/60/60/24,
-            hours: us.getLastLogin()/1000/60/60,
-            minutes:us.getLastLogin()/1000/60,
-            seconds: us.getLastLogin()/1000
-        },
+      years: us.getLastLogin() / 1000 / 60 / 60 / 24 / 7 / 365,
+      weeks: us.getLastLogin() / 1000 / 60 / 60 / 24 / 7,
+      days: us.getLastLogin() / 1000 / 60 / 60 / 24,
+      hours: us.getLastLogin() / 1000 / 60 / 60,
+      minutes: us.getLastLogin() / 1000 / 60,
+      seconds: us.getLastLogin() / 1000,
+    },
     password: us.getPassword(),
   };
 }
@@ -66,23 +60,24 @@ router.post("/file", multer().single(), async (req, res) => {
   res.send("Your file was sent");
 });
 
-router.post("/signup", POSTEnsureGuest, (req, res) => { // signup 
+router.post("/signup", POSTEnsureGuest, (req, res) => {
+  // signup
   let bodyparam = {
     error: "",
     email: "",
     username: "",
-  };// fills the form data if any input is provided
+  }; // fills the form data if any input is provided
 
   let email = req.body.email;
   let username = req.body.username;
   let password = req.body.password;
   let repassword = req.body.repassword;
 
-  console.log(email)
-  console.log(username)
-  console.log(password)
-  console.log(repassword)
-  
+  console.log(email);
+  console.log(username);
+  console.log(password);
+  console.log(repassword);
+
   if (password != repassword) {
     bodyparam.error = "Passwords dont match";
     bodyparam.email = email;
@@ -93,12 +88,7 @@ router.post("/signup", POSTEnsureGuest, (req, res) => { // signup
     });
     return;
   }
-  if (
-    email == undefined ||
-    username == undefined ||
-    password == undefined ||
-    repassword == undefined
-  ) {
+  if (email == undefined || username == undefined || password == undefined || repassword == undefined) {
     bodyparam.error = "Please fill out all of the fields and try again";
     res.status(401).redirect("/signup");
   } else {
@@ -111,7 +101,8 @@ router.post("/signup", POSTEnsureGuest, (req, res) => { // signup
         user: passInParams(req.cookies.username),
       });
       return;
-    } else { // User inputed valid credentials to make new account
+    } else {
+      // User inputed valid credentials to make new account
       db.addUser(email, username, password);
       res.redirect("/login");
     }
@@ -158,10 +149,9 @@ router.post("/forgot", ensureGuest, (req, res) => {
     }
   }
 });
-function sendEmail(email, token) {// send an email for reseting in password
-  sgMail.setApiKey(
-    "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"
-  );
+function sendEmail(email, token) {
+  // send an email for reseting in password
+  sgMail.setApiKey("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");
   const msg = {
     to: email, // Change to your recipient
     from: "tsa-software@sokobot.info", // Change to your verified sender
@@ -190,9 +180,10 @@ router.get("/forgot", ensureGuest, (req, res) => {
 
   let querytoken = req.query.token;
 
-  if (querytoken == undefined) res.render("forgot",{
-    user: passInParams(req.cookies.username),
-  });
+  if (querytoken == undefined)
+    res.render("forgot", {
+      user: passInParams(req.cookies.username),
+    });
 });
 //Login route
 router.post("/login", (req, res) => {
@@ -200,7 +191,7 @@ router.post("/login", (req, res) => {
     error: "",
   };
   if (req.cookies.username && req.cookies.token) {
-    if (req.headers.cookie=="true") {
+    if (req.headers.cookie == "true") {
       res.send("true");
       return;
     }
@@ -219,34 +210,35 @@ router.post("/login", (req, res) => {
     res.end();
     return;
   }
-  console.log(username)
+  console.log(username);
   console.log(password);
-  if (db.getPassword(username) == undefined) { //Accound doesn't exist
-    bodyparam.error =
-      "Sorry this account doesn't exist try again, if you dont have an account Signup!";
-      res.status(401).render("login", {
+  if (db.getPassword(username) == undefined) {
+    //Accound doesn't exist
+    bodyparam.error = "Sorry this account doesn't exist try again, if you dont have an account Signup!";
+    res.status(401).render("login", {
       body: bodyparam,
       user: passInParams(req.cookies.username),
     });
     console.log("User not found in db!");
     return;
-  } else if (db.getPassword(username) == password) { //Succesful login
+  } else if (db.getPassword(username) == password) {
+    //Succesful login
     let u = new user(db, username);
     res.cookie("username", u.getUsername(), { maxAge: 900000, httpOnly: true });
     res.cookie("token", u.getToken(), { maxAge: 900000, httpOnly: true });
-    u.setLoginTime()
+    u.setLoginTime();
 
-    //Send status to 
-    if (req.headers.cookie=="true") {
+    //Send status to
+    if (req.headers.cookie == "true") {
       return res.status(200).send("true");
-    } else{
-    res.redirect("/dashboard");
-    console.log("User authenticated");
+    } else {
+      res.redirect("/dashboard");
+      console.log("User authenticated");
     }
     return res.end();
-  } else { //Account doesn't exist 
-    bodyparam.error =
-      "Sorry this account doesn't exist try again, if you dont have an account Signup!";
+  } else {
+    //Account doesn't exist
+    bodyparam.error = "Sorry this account doesn't exist try again, if you dont have an account Signup!";
     res.status(401).render("login", {
       body: bodyparam,
       user: passInParams(req.cookies.username),
@@ -263,20 +255,20 @@ router.post("/login", (req, res) => {
     */
 });
 
-router.get("/list", ensureAdmin, (req, res) => { // list of users
+router.get("/list", ensureAdmin, (req, res) => {
+  // list of users
   res.render("users", {
     body: db.getAll(),
     user: passInParams(req.cookies.username),
   });
 });
 
-router.post("/makeadmin", POSTEnsureAdmin, (req, res) => { // makes a user an admin with the using provided in teh body and a authorization header
+router.post("/makeadmin", POSTEnsureAdmin, (req, res) => {
+  // makes a user an admin with the using provided in teh body and a authorization header
   let username = req.body.username;
   let toset = new user(db, username);
   if (toset.getId() == undefined) {
-    res
-      .status(404)
-      .send("Operation Canceled due to the provided user not existing");
+    res.status(404).send("Operation Canceled due to the provided user not existing");
     return;
   }
   let token = req.headers.authorization;
@@ -297,17 +289,14 @@ router.post("/makeadmin", POSTEnsureAdmin, (req, res) => { // makes a user an ad
       }
     }
   }
-  res.send(
-    "Operation Canceled due to an unexpected error, If you see this please report it to a developer!"
-  );
+  res.send("Operation Canceled due to an unexpected error, If you see this please report it to a developer!");
 });
-router.post("/removeadmin", POSTEnsureAdmin, (req, res) => { // same as  above but removess the permissions
+router.post("/removeadmin", POSTEnsureAdmin, (req, res) => {
+  // same as  above but removess the permissions
   let username = req.body.username;
   let toset = new user(db, username);
   if (toset.getId() == undefined) {
-    res
-      .status(404)
-      .send("Operation Canceled due to the provided user not existing");
+    res.status(404).send("Operation Canceled due to the provided user not existing");
     return;
   }
   let token = req.headers.authorization;
@@ -328,33 +317,29 @@ router.post("/removeadmin", POSTEnsureAdmin, (req, res) => { // same as  above b
       }
     }
   }
-  res.send(
-    "Operation Canceled due to an unexpected error, If you see this please report it to a developer!"
-  );
+  res.send("Operation Canceled due to an unexpected error, If you see this please report it to a developer!");
 });
 
 router.delete("/delete", POSTEnsureAuth, (req, res) => {
-    let use = new user(db,req.body.username)
-    let auth = new user(db, db.getUserFromToken(req.headers.authorization))
+  let use = new user(db, req.body.username);
+  let auth = new user(db, db.getUserFromToken(req.headers.authorization));
 
-    if (use==undefined || auth==undefined) {
-        res.status(404).send("User doesnt exist")
-        return
-    }
+  if (use == undefined || auth == undefined) {
+    res.status(404).send("User doesnt exist");
+    return;
+  }
 
-    console.log(use.getEmail())
-    console.log(auth.getEmail())
+  console.log(use.getEmail());
+  console.log(auth.getEmail());
 
-    console.log(req.body.username)
-    console.log(db.getUserFromToken(req.headers.authorization))
-    // if user token != token auth and user not admin
-    if (use.getToken()!=auth.getToken() && auth.isAdmin() != 1) {
-        res.status(403).send("You dont have permission to delete this user")
-        return
-    }
-    use.removeUser()
-    res.send("User deleted")
-
-
+  console.log(req.body.username);
+  console.log(db.getUserFromToken(req.headers.authorization));
+  // if user token != token auth and user not admin
+  if (use.getToken() != auth.getToken() && auth.isAdmin() != 1) {
+    res.status(403).send("You dont have permission to delete this user");
+    return;
+  }
+  use.removeUser();
+  res.send("User deleted");
 });
 module.exports = router;

@@ -30,8 +30,8 @@ for (let i = 0; i < allowedIps.length; i++) {
 }
 
 const corsOptions = {
-  origin: ["https://tsa-software-2024.pages.dev","https://webapp.twetzel.com", "https://webpack-7xv.pages.dev", "http://192.168.56.1:8080", "http://localhost:8080/", "http://localhost:5173/", ...allowedIps],
-  credentials: true,  
+  origin: ["https://tsa-software-2024.pages.dev", "https://webapp.twetzel.com", "https://webpack-7xv.pages.dev", "http://192.168.56.1:8080", "http://localhost:8080/", "http://localhost:5173/", ...allowedIps],
+  credentials: true,
 };
 var httpsServer = https.createServer(credentials, app);
 
@@ -126,10 +126,8 @@ app.post("*", function (req, res) {
 //Starts server and sets a port
 
 httpsServer.listen(80, "0.0.0.0", () => {
-  console.log(`Serving on 443/80`)
-})
-
-
+  console.log(`Serving on 443/80`);
+});
 
 // app.listen(port, () => {
 //   console.log(`Server started on port ${port}`);
