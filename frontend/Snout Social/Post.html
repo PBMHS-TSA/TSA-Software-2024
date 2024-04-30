@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <title>Post</title>
+</head>
+
+<body>
+
+ <nav class="top-navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Menu &#9776;</button>
+            <div class="dropdown-content">
+                <a href="Profile.html">Dog Profile</a>
+                <a href="myaccount.html">Human Profile</a>
+                <a href="Makeafriend.html">Friend Finder</a>
+                <a href="Friendrequests.html">Friend Requests</a>
+                <a href="Chat.html">Chat</a>
+                <a href="Dogparks.html">Dog Parks</a>
+                <a href="Help.html">Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="Mainhead">CREATE NEW POST</h2>
+
+        <form action="submit_post.php" method="post" enctype="multipart/form-data" class="post-form">
+            <div class="form-group post-space">
+                <label for="post-image">Upload Image:</label>
+                <input type="file" id="post-image" name="post-image" accept="image/*">
+            </div>
+
+            <div class="form-group post-space">
+                <textarea id="post-caption" name="post-caption" rows="4" placeholder="Tell your friends about your experience..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="post-btn">Post</button>
+            </div>
+        </form>
+
+    </div>
+
+    <nav class="bottom-navbar">
+        <a href="home.html">Home</a>
+        <a href="Map.html">Map</a>
+        <a href="Post.html">Post</a>
+        <a href="Myfriends.html">My Friends</a>
+        <a href="Settings.html">Settings</a>
+    </nav>
+
+</body>
+
+</html>

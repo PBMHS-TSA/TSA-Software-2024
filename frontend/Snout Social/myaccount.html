@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My Account</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="Mainhead">My Account</h2>
+
+        <div class="user-info">
+            <p><strong>Owner's Name:</strong> Jayden Green</p>
+            <p><strong>Email:</strong> jaydeng@doggomail.com</p>
+            <p><strong>Phone Number:</strong> 123-456-7890</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Birthday:</strong> March 17, 1995</p>
+        </div>
+
+        <a href="login.html" class="button">Log Out</a>
+
+        <button class="button" id="deleteButton">Delete Account</button>
+
+        <div id="successMessage" style="display: none;">
+            Account deleted successfully! Redirecting...
+        </div>
+
+        <script>
+            document.getElementById('deleteButton').addEventListener('click', function() {
+                var confirmation = prompt("To confirm deletion, please type 'POODLE' (all caps):");
+                if (confirmation !== null) {
+                    if (confirmation === 'POODLE') {
+                        document.getElementById('successMessage').style.display = 'block';
+                        setTimeout(function() {
+                            window.location.href = 'deletedaccount.html';
+                        }, 5000);
+                    } else {
+                        alert("Incorrect confirmation. Please type 'POODLE' (all caps) to confirm deletion.");
+                    }
+                } else {
+                    alert("Account deletion cancelled.");
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

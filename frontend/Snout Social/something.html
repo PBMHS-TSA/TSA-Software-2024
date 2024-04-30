@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - TSA-Software</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+<style>
+    .separator {
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .separator::before,
+      .separator::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid grey;
+      }
+      
+      .separator:not(:empty)::before {
+        margin-right: .25em;
+      }
+      
+      .separator:not(:empty)::after {
+        margin-left: .25em;
+      }
+</style>
+
+</head>
+<body >
+<div class="section"></div>
+<main>
+  <center>
+    <div class="section"></div>
+
+    <h5 class="indigo-text">To login in, input your email OR username</h5>
+    <div class="section"></div>
+<form action="/users/forgot" method="POST" enctype="application/x-www-form-urlencoded">
+
+    <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+        <div class="row">
+
+            <div class="input-field col s12">
+
+                <input type="email" id="email" name="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+
+        </div>
+        <div class="separator" style="color:grey">OR</div>
+        <div class="row">
+
+            <div class="input-field col s12">
+
+                <input type="text" id="username" name="username" class="validate">
+                <label for="username">Username</label>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="input-field col s12">
+
+                <button type="submit" class="col s12 btn btn-large waves-effect indig" >CONTINUE<i class="material-icons right">send</i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</form>
+<a href="/signup">Create an Account</a>
+</center>
+<div class="section"></div>
+<div class="section"></div>
+</main>
+
+
+</body>
+</html>
+</body>

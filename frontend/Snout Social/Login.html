@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<title>Login</title>
+</head>
+
+<body>
+
+<div class="container">
+    <h2 class="Mainhead">Login</h2>
+    <h2 class="Subhead">Let the tail wagging and Zoomies begin!</h2>
+
+    <div class="spacepar profile-pic-container">
+    </div>
+
+    <form action="submit_profile.php" method="post" enctype="multipart/form-data" class="card">
+        <div class="form-group">
+            <label for="dog-name">Email</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dog-name">Password</label>
+            <input type="text" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <button class="spacepar normal-btn" type="submit">LOGIN</button>
+        </div>
+        
+        <div class="form-group">
+            <a href="createaccount.html" class="spacepar normal-btn">CREATE AN ACCOUNT</a>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

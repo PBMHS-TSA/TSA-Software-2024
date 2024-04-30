@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dog Parks</title>
+</head>
+
+<body>
+
+<nav class="top-navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Menu &#9776;</button>
+            <div class="dropdown-content">
+                <a href="Profile.html">Dog Profile</a>
+                <a href="myaccount.html">Human Profile</a>
+                <a href="Makeafriend.html">Friend Finder</a>
+                <a href="Friendrequests.html">Friend Requests</a>
+                <a href="Chat.html">Chat</a>
+                <a href="Dogparks.html">Dog Parks</a>
+                <a href="Help.html">Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="Mainhead">DOG PARKS</h2>
+        <p class="Subhead">It's playtime!</p>
+
+        <form id="parkFilterForm">
+            <label for="location">Your Location:</label>
+            <input type="text" id="location" name="location" required placeholder="Enter your location">
+
+            <label for="parkSize">Park Size:</label>
+            <select id="parkSize" name="parkSize">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <label for="leashRequirement">Leash Requirement:</label>
+            <select id="leashRequirement" name="leashRequirement">
+                <option value="leashed">Leashed</option>
+                <option value="offLeash">Off-Leash</option>
+            </select>
+
+            <button type="button" onclick="searchDogParks()">Search Dog Parks</button>
+        </form>
+
+        <div id="dogParkResults">
+
+		</div>
+    </div>
+
+    <nav class="bottom-navbar">
+        <a href="home.html">Home</a>
+        <a href="Map.html">Map</a>
+        <a href="Post.html">Post</a>
+        <a href="Myfriends.html">My Friends</a>
+        <a href="Settings.html">Settings</a>
+    </nav>
+
+    <script>
+        function searchDogParks() {
+            document.getElementById('dogParkResults').innerHTML = '<p>No dog parks found.</p>';
+        }
+    </script>
+</body>
+</html>
