@@ -2,11 +2,17 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from "../views/Home.vue";
 import chat from "../views/Chat.vue";
 import mf from "../views/mf.vue";
+import profile from "../views/profile.vue";
 import { CredentialManager, socket } from "../../globals";
 import Map from "../views/components/Map.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    {
+      path: "/:profile",
+      name: "Prfile",
+      component:profile
+    },
     {
       path: "/",
       name: "Home",

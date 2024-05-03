@@ -97,7 +97,7 @@ export default {
           if (category === "petStores") {
             // Check if the pet store also offers grooming services
             const isGroomer = place.categories.some((category) => category.id === "pet-care");
-            console.log(place.categories)
+            console.log(place.categories);
             if (isGroomer) {
               this.createMarker(place.position.lat, place.position.lng, pins.groomer, map, { width: 56, height: 56 });
             } else {
@@ -110,7 +110,9 @@ export default {
       }
     },
     async fetchDogCarePlaces(category, lat, lng) {
-      const url = `https://discover.search.hereapi.com/v1/discover?at=${lat},${lng}&q=${category}&limit=30&apiKey=${this.apikey}`;
+      let limit = 30;
+
+      const url = `https://discover.search.hereapi.com/v1/discover?at=${lat},${lng}&q=${category}&limit=${limit}&apiKey=${this.apikey}`;
       try {
         const response = await fetch(url);
         const data = await response.json();
