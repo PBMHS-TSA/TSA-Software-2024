@@ -1,0 +1,70 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card-message {
+  position: absolute;
+  background-color: rgb(38, 166, 154);
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  padding-top: 13px;
+  left: 200px;
+  cursor: pointer;
+}
+.card-message > span {
+  scale: 1.5;
+}
+.card {
+  width: 300px;
+  padding: 20px;
+  background-image: linear-gradient(to left, #ebbc07, #e88c07);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 10%;
+}
+.cardprofile {
+  width: 300px;
+  padding: 20px;
+  background-image: linear-gradient(to left, #ebbc07, #e88c07);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 10px 10px;
+}
+
+.card h2 {
+  color: #333;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.card button.like {
+  background-color: #4caf50;
+  color: white;
+}
+
+.card button.dislike {
+  background-color: #ff5733;
+  color: white;
+}

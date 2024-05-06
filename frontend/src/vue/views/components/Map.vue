@@ -1,7 +1,7 @@
 <template>
   <div id="map">
     <!-- In the following div the HERE Map will render -->
-    <div id="mapContainer" style="height: 600px; width: 100%" ref="hereMap"></div>
+    <div id="mapContainer" ref="hereMap"></div>
   </div>
 </template>
 

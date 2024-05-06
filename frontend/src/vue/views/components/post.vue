@@ -4,36 +4,7 @@
     <p>{{ postContent }}</p>
   </div>
 </template>
-<style>
-.post-container {
-  border-radius: 40px;
-}
-.post-container {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
 
-.post-container:hover {
-  transform: translateY(-5px);
-}
-
-.post-container img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.post-container p {
-  font-size: 1.2em;
-  margin-bottom: 15px;
-}
-</style>
 <script>
 export default {
   props: {

@@ -1,0 +1,25 @@
+.like i {
+    color: #4caf50;
+  }
+  .dislike i {
+    color: #ff5733;
+  }
+  button.dislike,
+  button.like {
+    cursor: pointer;
+    background-color: transparent !important;
+  }
+  .like:active,
+  .dislike:active {
+    border-width: 3px;
+  }
+  .like:active {
+    color: #246b27;
+  }
+  .dislike:active {
+    color: #f74019;
+  }
+  .usercard {
+    display: inline-flex;
+  
+  }

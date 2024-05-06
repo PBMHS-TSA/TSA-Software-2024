@@ -1,7 +1,7 @@
 <template>
   <div :id="'user' + id" class="usercard">
-    <div><span class="material-icons">chat</span></div>
-    <div class="card" :id="'card' + linenumber" :style="'display:' + (linenumber == 0 ? 'block' : 'none;')">
+    <div :ondragover="swipemobile" class="card" :id="'card' + linenumber" :style="'display:' + (linenumber == 0 ? 'block' : 'none;')">
+      <div class="card-message"><span class="large material-icons" >chat</span></div>
       <!--:ondragover="swipemobile"-->
       <img :alt="'Dog' + id" :src="dogimage" />
       <h2>{{ name }}</h2>
@@ -14,7 +14,6 @@
     </div>
 
     <div class="cardprofile" :id="'profile' + linenumber" :style="'display:' + (linenumber == 0 ? 'block' : 'none;')">
-      <!--:ondragover="swipemobile"-->
       <h2>{{ owner.name }}</h2>
       <p>Age: {{ owner.age }} Years</p>
       <p>Distance: {{ distance }} Miles</p>
@@ -22,6 +21,7 @@
     </div>
   </div>
 </template>
+
 <script>
 window.stuffs = {
   currentCardIndex: 0,
@@ -34,8 +34,8 @@ export default {
   },
   methods: {
     swipemobile(event) {
-      let action = "like";
       console.log(event);
+      let action = "like";
       if (action === "dislike") {
         window.stuffs.dislikeCount++;
       } else if (action === "like") {
