@@ -15,11 +15,8 @@
 
       <div class="user-posts">
         <h3>User Posts</h3>
-        <post id="posts" :for="post in posts" :postContent="post.postContent" :postImage="post.postImage"></post>
-        <div class="post-container">
-          <img src="../assets/jaxon/toy.png" alt="Post 1" />
-          <p>I got a new chew toy! Check it out!</p>
-        </div>
+        <!--<post id="posts" :for="post in posts" :postContent="post.postContent" :postImage="post.postImage"></post>-->
+
         <post :postContent="'lmao'" :postImage="'http://localhost:5173/src/vue/assets/jaxon/profilepic.png'"></post>
       </div>
     </div>
