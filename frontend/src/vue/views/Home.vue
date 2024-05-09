@@ -1,7 +1,6 @@
 <template>
-  <h1 style="font-family: Black Ops One; font-size: 50px; text-align: center">Snout Social</h1>
-  <h1 style="font-family: Black Ops One; font-size: 50px; text-align: center">Snout Social</h1>
-  <div class="Overview" style="font-family: Comic Sans MS; font-size: 30px">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
+  <h1 class="home-header">Snout Social</h1>
+  <div class="Overview">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
 
   <div class="FAQs">
     <h1>FAQs</h1>
@@ -9,7 +8,7 @@
     <div class="Dropdown">
       <button :onClick="Button1" class="dropbtn">
         1) How do you use the app?
-        <nobr style="color: #e7bd1d">(Click Us)</nobr>
+        <nobr style="color: #e7bd1d; font-family: fantasy">(Click Us)</nobr>
       </button>
       <div id="Description_1" class="Dropdown_Contents-alt">
         <ul>

@@ -3,8 +3,21 @@
     <!-- In the following div the HERE Map will render -->
     <div id="mapContainer" ref="hereMap"></div>
   </div>
+  <button id="centerButton" :onclick="centerMap"></button>
 </template>
-
+<style>
+#centerButton {
+  position: absolute;
+    top: 76%;
+    left: 76.2%;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+}
+</style>
 <script>
 export default {
   name: "Map",
@@ -16,6 +29,9 @@ export default {
     return {
       platform: null,
       apikey: "j0QxHumNVhmcu8MHfAh8Ag-HSn4cZ4z4NScpNELwce0",
+      map: undefined,
+      center: { lat: undefined, lng: undefined },
+
       // You can get the API KEY from developer.here.com
     };
   },
@@ -27,6 +43,8 @@ export default {
           // Retrieve latitude and longitude from the position object
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
+          this.center.lat = latitude;
+          this.center.lng = longitude;
           this.initializeHereMap(latitude, longitude);
           // Do something with the latitude and longitude, such as displaying them on the webpage
           console.log("Latitude: " + latitude + ", Longitude: " + longitude);
@@ -42,6 +60,9 @@ export default {
     }
   },
   methods: {
+    centerMap() {
+      window.maperer.setCenter({ lat: this.center.lat, lng: this.center.lng });
+    },
     createMarker(lat, lng, icon, map, size) {
       const marker = new H.map.Marker({ lat: lat, lng: lng });
       const pngIcon = new H.map.Icon(icon, { size: { w: size.width, h: size.height } });

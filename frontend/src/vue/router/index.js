@@ -5,13 +5,19 @@ import mf from "../views/mf.vue";
 import profile from "../views/profile.vue";
 import { CredentialManager, socket } from "../../globals";
 import Map from "../views/components/Map.vue";
+import CD from "../views/CreateDog.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: "/createdog",
+      name: "Create Dog",
+      component: CD,
+    },
+    {
       path: "/:profile",
       name: "Prfile",
-      component:profile
+      component: profile,
     },
     {
       path: "/",

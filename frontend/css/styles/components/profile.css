@@ -1,0 +1,14 @@
+.user-posts img {
+  max-width: 480px;
+  max-height: 480px;
+}
+.dog-info {
+  top: 45px;
+  position: relative;
+  margin-left: 20%;
+}
+.profile-pic {
+  border-radius: 1000px;
+  width: 256px;
+  height: 256px;
+}
