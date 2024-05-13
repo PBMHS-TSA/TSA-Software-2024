@@ -1,24 +1,34 @@
 <template>
-  <div id="map">
-    <!-- In the following div the HERE Map will render -->
-    <div id="mapContainer" ref="hereMap"></div>
+  <div style="display: inline-flex">
+    <div id="map">
+      <!-- In the following div the HERE Map will render -->
+      <div id="mapContainer" ref="hereMap" style="margin-left: 10%; background-color: transparent"></div>
+    </div>
+    <button id="centerButton" :onclick="centerMap"><span class="material-icons">adjust</span></button>
+    <div style="left: 5%">
+      <MapItem :v-for="item in mapitem" :type="'leamer'" :location="{ lng: 101, lat: 101 }" :name="'leamer'"></MapItem>
+    </div>
   </div>
-  <button id="centerButton" :onclick="centerMap"></button>
 </template>
 <style>
 #centerButton {
   position: absolute;
-    top: 76%;
-    left: 76.2%;
-    z-index: 1;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    cursor: pointer;
+  top: 74%;
+  left: 62.45%;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5%;
+  cursor: pointer;
 }
 </style>
 <script>
+import {ref} from "vue"
+import MapItem from "./MapItem.vue";
+
+const mapitem=ref([])
+
 export default {
   name: "Map",
   props: {
@@ -65,8 +75,10 @@ export default {
     },
     createMarker(lat, lng, icon, map, size) {
       const marker = new H.map.Marker({ lat: lat, lng: lng });
-      const pngIcon = new H.map.Icon(icon, { size: { w: size.width, h: size.height } });
-      marker.setIcon(pngIcon);
+      if (icon != undefined) {
+        const pngIcon = new H.map.Icon(icon, { size: { w: size.width, h: size.height } });
+        marker.setIcon(pngIcon);
+      }
       map.addObject(marker);
     },
     async initializeHereMap(lat, lng) {
@@ -103,7 +115,7 @@ export default {
         parks: "https://i.ibb.co/0c90tpD/Untitled-design-1-removebg-preview.png",
       };
 
-      this.createMarker(lat, lng, pins.location, map, { width: 56, height: 56 });
+      this.createMarker(lat, lng, undefined, map, { width: 56, height: 56 });
       // Fetch points of interest using HERE Geocoding & Search API v7
       const categories = {
         parks: "dog-park",
@@ -143,6 +155,9 @@ export default {
         return [];
       }
     },
+  },
+  components: {
+    MapItem,
   },
 };
 </script>
