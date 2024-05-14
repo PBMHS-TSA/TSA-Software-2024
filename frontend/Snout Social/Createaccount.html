@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="styles.css" rel="stylesheet" type="text/css">
-<title>Create an Account</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Create an Account</title>
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+      <h2 class="Mainhead">CREATE AN ACCOUNT</h2>
+      <label for="dog-image" class="profile-pic-container">
+        <input type="file" id="dog-image" name="dog-image" accept="image/*" class="add-image-btn" style="display: none" />
+        <img src="Otherpics/Plus.png" alt="User Picture" class="profile-pic" style="width: 225px; height: 200px; cursor: pointer" />
+      </label>
 
-<div class="container">
-    <h2 class="Mainhead">CREATE AN ACCOUNT</h2>
-    <label for="dog-image" class="profile-pic-container">
-        <input type="file" id="dog-image" name="dog-image" accept="image/*" class="add-image-btn" style="display: none;">
-        <img src="Otherpics/Plus.png" alt="User Picture" class="profile-pic" style="width: 225px; height: 200px; cursor: pointer;">
-    </label>
-
-    <div class="spacepar profile-pic-container">
+      <div class="spacepar profile-pic-container">
         <label for="dog-image" class="add-image-label">Add Profile Picture</label>
-    </div>
+      </div>
 
-    <form action="welcome.html" method="post" enctype="multipart/form-data" class="card">
+      <form action="welcome.html" method="post" enctype="multipart/form-data" class="card">
         <div class="form-group">
-            <label for="owner-name">Owner's Name</label>
-            <input type="text" id="owner-name" name="owner-name" required>
+          <label for="owner-name">Owner's Name</label>
+          <input type="text" id="owner-name" name="owner-name" required />
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
         </div>
 
         <div class="form-group">
-            <label for="phonenumber">Phone Number</label>
-            <input type="tel" id="phonenumber" name="phonenumber" required>
+          <label for="phonenumber">Phone Number</label>
+          <input type="tel" id="phonenumber" name="phonenumber" required />
         </div>
 
         <div class="form-group">
-            <label>Gender:</label>
-            <label for="male">Male</label>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="female">Female</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="other">Prefer Not to Say</label>
-            <input type="radio" id="other" name="gender" value="other">
+          <label>Gender:</label>
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="other">Prefer Not to Say</label>
+          <input type="radio" id="other" name="gender" value="other" />
         </div>
 
         <div class="form-group">
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday" required>
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" required />
         </div>
 
         <div class="form-group">
-            <button type="submit" class="post-btn">Create Account</button>
+          <button type="submit" class="post-btn">Create Account</button>
         </div>
 
         <button class="spacepar back-btn" onclick="goBack()">BACK</button>
-    </form>
+      </form>
+    </div>
 
-</div>
-
-<script>
-    function goBack() {
+    <script>
+      function goBack() {
         window.history.back();
-    }
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>

@@ -1,11 +1,13 @@
-function getRandomResponse() {
+function getRandomResponse(index) {
   const responses = ["Hello!", "Good! How about you?", "Thats Good! When do you want to meet up?"];
 
-  const randomIndex = Math.floor(Math.random() * responses.length);
-  return responses[randomIndex];
+  return responses[index];
 }
 
 function sendMessage() {
+  if (!window.index) {
+    window.index = 0;
+  }
   const messageInput = document.getElementById("message-input");
   const chatMessages = document.getElementById("chat-messages");
 
@@ -22,7 +24,7 @@ function sendMessage() {
     setTimeout(() => {
       const receivedMessageElement = document.createElement("div");
       receivedMessageElement.classList.add("message", "received");
-      receivedMessageElement.innerHTML = `<p>${getRandomResponse()}</p>`;
+      receivedMessageElement.innerHTML = `<p>${getRandomResponse(window.index++)}</p>`;
       chatMessages.appendChild(receivedMessageElement);
     }, 1000);
   }
