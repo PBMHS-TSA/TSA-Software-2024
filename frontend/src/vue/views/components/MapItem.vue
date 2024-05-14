@@ -1,9 +1,16 @@
 <template>
-  <div class="row" style="position: absolute; margin-left: 10%">
-    <div class="col s5">{{ name }}</div>
-    <div class="col s5">{{ type }}</div>
+  <div class="row" >
+    <div class="col s7">{{ name }}</div>
+    <div class="col s3">{{ type }}</div>
   </div>
 </template>
+<style>
+.map-style {
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 4%;
+}
+</style>
 <script>
 export default {
   name: "MapItem",

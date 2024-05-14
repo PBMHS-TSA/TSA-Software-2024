@@ -6,7 +6,7 @@
     </div>
     <button id="centerButton" :onclick="centerMap"><span class="material-icons">adjust</span></button>
     <div style="left: 5%">
-      <MapItem :v-for="item in mapitem" :type="'leamer'" :location="{ lng: 101, lat: 101 }" :name="'leamer'"></MapItem>
+      <MapItem v-for="item of mapitem" :type="item.type" :location="item.location" :name="item.name"></MapItem>
     </div>
   </div>
 </template>
@@ -24,10 +24,10 @@
 }
 </style>
 <script>
-import {ref} from "vue"
+import { ref } from "vue";
 import MapItem from "./MapItem.vue";
 
-const mapitem=ref([])
+const mapitem = ref([]);
 
 export default {
   name: "Map",
@@ -37,6 +37,7 @@ export default {
   },
   data() {
     return {
+      mapitem,
       platform: null,
       apikey: "j0QxHumNVhmcu8MHfAh8Ag-HSn4cZ4z4NScpNELwce0",
       map: undefined,
@@ -130,7 +131,8 @@ export default {
           if (category === "petStores") {
             // Check if the pet store also offers grooming services
             const isGroomer = place.categories.some((category) => category.id === "pet-care");
-            console.log(place.categories);
+            console.log(place);
+            mapitem.value.push({name:place.title, location:place.position,type:category})
             if (isGroomer) {
               this.createMarker(place.position.lat, place.position.lng, pins.groomer, map, { width: 56, height: 56 });
             } else {
