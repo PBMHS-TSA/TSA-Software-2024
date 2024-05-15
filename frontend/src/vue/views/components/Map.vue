@@ -1,5 +1,5 @@
 <template>
-  <div style="display: inline-flex; margin-top: 5%">
+  <div style="display: inline-flex;">
     <div id="map">
       <!-- In the following div the HERE Map will render -->
       <div id="mapContainer" ref="hereMap" style="margin-left: 10%; background-color: transparent"></div>
