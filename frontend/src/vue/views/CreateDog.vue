@@ -3,7 +3,7 @@
     <h2 class="Mainhead">CREATE DOG PROFILE</h2>
     <label for="dog-image" class="profile-pic-container">
       <input type="file" id="dog-image" name="dog-image" accept="image/*" class="add-image-btn" style="display: none" />
-      <img src="./../assets/Plus.png" alt="User Picture" class="profile-pic" style="width: 225px; height: 200px; cursor: pointer" />
+      <img src="./../assets/plus.png" alt="User Picture" class="profile-pic" style="width: 225px; height: 200px; cursor: pointer" />
     </label>
 
     <div class="spacepar profile-pic-container">
