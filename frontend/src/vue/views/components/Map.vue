@@ -1,19 +1,33 @@
 <template>
-  <div style="display: inline-flex">
+  <div style="display: inline-flex; margin-top: 5%">
     <div id="map">
       <!-- In the following div the HERE Map will render -->
       <div id="mapContainer" ref="hereMap" style="margin-left: 10%; background-color: transparent"></div>
     </div>
     <button id="centerButton" :onclick="centerMap"><span class="material-icons">adjust</span></button>
-    <div style="left: 5%">
+    <div class="mapitems">
+      <div class="row">
+        <div class="col s7">Name</div>
+        <div class="col s3">Category</div>
+      </div>
       <MapItem v-for="item of mapitem" :type="item.type" :location="item.location" :name="item.name"></MapItem>
     </div>
   </div>
 </template>
 <style>
+.mapitems {
+  right: 8%;
+  position: absolute;
+  max-height: 80%;
+  overflow-y: scroll;
+  width: 25%;
+}
+.mapitems > div {
+  border: 1px solid grey;
+}
 #centerButton {
   position: absolute;
-  top: 74%;
+  top: 69%;
   left: 62.45%;
   z-index: 1;
   background-color: white;
@@ -21,6 +35,14 @@
   border-radius: 5px;
   padding: 0.5%;
   cursor: pointer;
+}
+#map {
+  width: 60vw;
+  min-width: 360px;
+  text-align: center;
+  margin: 5% auto;
+  background-color: #ccc;
+  margin-top: 1%;
 }
 </style>
 <script>
@@ -131,8 +153,8 @@ export default {
           if (category === "petStores") {
             // Check if the pet store also offers grooming services
             const isGroomer = place.categories.some((category) => category.id === "pet-care");
-            console.log(place);
-            mapitem.value.push({name:place.title, location:place.position,type:category})
+            console.log(place.position);
+            mapitem.value.push({ name: place.title, location: place.position, type: category });
             if (isGroomer) {
               this.createMarker(place.position.lat, place.position.lng, pins.groomer, map, { width: 56, height: 56 });
             } else {
@@ -163,13 +185,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#map {
-  width: 60vw;
-  min-width: 360px;
-  text-align: center;
-  margin: 5% auto;
-  background-color: #ccc;
-}
-</style>

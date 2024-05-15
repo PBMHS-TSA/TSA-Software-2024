@@ -1,5 +1,5 @@
 <template>
-  <nav style="margin-bottom: 1%">
+  <nav style="position: absolute; margin-bottom: 1%; z-index: 100">
     <div class="nav-wrapper indigo">
       <img style="height: auto; width: auto; max-height: -webkit-fill-available" src="https://firebasestorage.googleapis.com/v0/b/twetzel-a07f2.appspot.com/o/logo.png?alt=media&token=03163384-242a-4530-9d14-3409521b721a" class="center brand-logo" />
       <ul id="nav-mobile" class="right hide-on-med-and-down">
