@@ -1,5 +1,5 @@
 <template>
-  <div style="display: inline-flex;">
+  <div style="display: inline-flex">
     <div id="map">
       <!-- In the following div the HERE Map will render -->
       <div id="mapContainer" ref="hereMap" style="margin-left: 10%; background-color: transparent"></div>
@@ -7,28 +7,29 @@
     <button id="centerButton" :onclick="centerMap"><span class="material-icons">adjust</span></button>
     <div class="mapitems">
       <div class="row">
-        <div class="col s7">Name</div>
+        <div class="col s5">Name</div>
         <div class="col s3">Category</div>
+        <div class="col s1">Distance</div>
       </div>
-      <MapItem v-for="item of mapitem" :type="item.type" :location="item.location" :name="item.name"></MapItem>
+      <MapItem v-for="item of mapitem" :type="item.type" :location="item.location" :name="item.name" :distance="item.distance"></MapItem>
     </div>
   </div>
 </template>
 <style>
 .mapitems {
-  right: 8%;
+  right: 1.25%;
   position: absolute;
   max-height: 80%;
   overflow-y: scroll;
-  width: 25%;
+  width: 31.9%;
 }
 .mapitems > div {
-  border: 1px solid grey;
+  border-top: 1px solid grey;
 }
 #centerButton {
   position: absolute;
-  top: 69%;
-  left: 62.45%;
+  top: 68%;
+  left: 61.79%;
   z-index: 1;
   background-color: white;
   border: 1px solid #ccc;
@@ -41,7 +42,8 @@
   min-width: 360px;
   text-align: center;
   margin: 5% auto;
-  background-color: #ccc;
+  max-height: 160px;
+  background-color: transparent;
   margin-top: 1%;
 }
 </style>
@@ -145,16 +147,20 @@ export default {
         groomers: "dog-groomer",
         petStores: "pet-store",
       };
-
+      let CategoryTypes = {
+        parks: "Park",
+        petStores: "Pet Store",
+        groomers: "Groomer",
+      };
       for (const category of Object.keys(categories)) {
-        console.log(category);
         const places = await this.fetchDogCarePlaces(category, lat, lng);
         places.forEach((place) => {
+          mapitem.value.push({ name: place.title, location: place.position, type: CategoryTypes[category], distance: place.distance });
+
           if (category === "petStores") {
             // Check if the pet store also offers grooming services
             const isGroomer = place.categories.some((category) => category.id === "pet-care");
-            console.log(place.position);
-            mapitem.value.push({ name: place.title, location: place.position, type: category });
+            console.log(place);
             if (isGroomer) {
               this.createMarker(place.position.lat, place.position.lng, pins.groomer, map, { width: 56, height: 56 });
             } else {
@@ -165,6 +171,7 @@ export default {
           }
         });
       }
+      mapitem.value = mapitem.value.sort((a, b) => a.location.distance - b.location.distance);
     },
     async fetchDogCarePlaces(category, lat, lng) {
       let limit = 30;

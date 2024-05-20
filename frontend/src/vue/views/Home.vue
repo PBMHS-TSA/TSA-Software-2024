@@ -1,4 +1,5 @@
 <template>
+  <div class="daddy">
   <h1 class="home-header">Snout Social</h1>
   <div class="Overview">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
 
@@ -8,7 +9,7 @@
     <div class="Dropdown">
       <button :onClick="Button1" class="dropbtn">
         1) How do you use the app?
-        <nobr style="color: #e7bd1d; font-family: fantasy">(Click Us)</nobr>
+        <nobr style="color: rgb(0, 179, 0); font-family: fantasy">(Click Us)</nobr>
       </button>
       <div id="Description_1" class="Dropdown_Contents-alt">
         <ul>
@@ -53,7 +54,7 @@
               - Swipe
               <b>left</b>
               to dislike a profile
-            </p>
+            </p>  
             <p class="ml5 smallerfont">
               - Swipe
               <b>right</b>
@@ -81,15 +82,20 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
-
+.daddy {
+background-size: 100vw 100vh;
+background-image: url(https://www.dogsensepa.com/sites/default/files/styles/large/public/2019-12/image1%20%2891%29.png?itok=TslytPOT);
+background-repeat: no-repeat;
+}
 .FAQs {
   margin: auto;
   padding-left: auto;
   padding-right: auto;
-  background-color: white;
+  background-color: transparent;
   border: 5px solid black;
   width: 70%;
   border-radius: 30px;
@@ -113,7 +119,7 @@
   margin-bottom: 3%;
   margin-left: auto;
   margin-right: auto;
-  color: black;
+  color: darkslateblue;
 }
 
 .Dropdown {
@@ -126,7 +132,7 @@
 }
 
 .FAQs .dropbtn:hover {
-  color: darkgray;
+  color: blue;
   cursor: pointer;
   transition: 0.3s ease;
 }
