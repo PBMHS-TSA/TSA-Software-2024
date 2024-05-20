@@ -1,95 +1,96 @@
 <template>
-  <div class="daddy">
-  <h1 class="home-header">Snout Social</h1>
-  <div class="Overview">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
+  <div class="">
+    <img style="position: absolute; opacity: 0.3; width: 100vw; height: 100vh; z-index: -10000;" src="https://www.dogsensepa.com/sites/default/files/styles/large/public/2019-12/image1%20%2891%29.png?itok=TslytPOT" />
+    <h1 class="home-header">Snout Social</h1>
+    <div class="Overview">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
 
-  <div class="FAQs">
-    <h1>FAQs</h1>
+    <div class="FAQs">
+      <h1>FAQs</h1>
 
-    <div class="Dropdown">
-      <button :onClick="Button1" class="dropbtn">
-        1) How do you use the app?
-        <nobr style="color: rgb(0, 179, 0); font-family: fantasy">(Click Us)</nobr>
-      </button>
-      <div id="Description_1" class="Dropdown_Contents-alt">
-        <ul>
-          <li>1 Download the app</li>
-          <li>2 Create an account</li>
-          <li>3 Add your dog's information</li>
-          <li>4 Start swiping to find your dog's new best friend!</li>
-        </ul>
+      <div class="Dropdown">
+        <button :onClick="Button1" class="dropbtn"> 
+          1) How do you use the app?
+          <nobr style="color: rgb(0, 179, 0); font-family: fantasy">(Click Us)</nobr>
+        </button>
+        <div id="Description_1" class="Dropdown_Contents-alt">
+          <ul>
+            <li>1 Download the app</li>
+            <li>2 Create an account</li>
+            <li>3 Add your dog's information</li>
+            <li>4 Start swiping to find your dog's new best friend!</li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div class="Dropdown">
-      <button :onClick="Button2" class="dropbtn">2) What's the program's purpose?</button>
-      <div id="Description_2" class="Dropdown_Contents-alt">
-        <ul>
-          <li class="smallerfont">• Matching dogs with compatible playmates.</li>
-          <li class="smallerfont">• Locating nearby animal-friendly parks.</li>
-          <li class="smallerfont">• Providing services for hiring dog walkers or finding dog sitters.</li>
-          <li class="smallerfont">• Offering a platform for dog owners to socialize and arrange meetups for their pets.</li>
-          <p>Overall, the app aims to enhance the social and recreational experiences of dogs and their owners while also addressing practical needs such as pet care services.</p>
-        </ul>
+      <div class="Dropdown">
+        <button :onClick="Button2" class="dropbtn">2) What's the program's purpose?</button>
+        <div id="Description_2" class="Dropdown_Contents-alt">
+          <ul>
+            <li class="smallerfont">• Matching dogs with compatible playmates.</li>
+            <li class="smallerfont">• Locating nearby animal-friendly parks.</li>
+            <li class="smallerfont">• Providing services for hiring dog walkers or finding dog sitters.</li>
+            <li class="smallerfont">• Offering a platform for dog owners to socialize and arrange meetups for their pets.</li>
+            <p>Overall, the app aims to enhance the social and recreational experiences of dogs and their owners while also addressing practical needs such as pet care services.</p>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div class="Dropdown">
-      <button :onClick="Button3" class="dropbtn">3) How much does our app cost</button>
-      <div id="Description_3" class="Dropdown_Contents">
-        <p>
-          <b>Absolutely free!</b>
-          Enjoy our app's full functionality without any charges. Plus, take advantage of our convenient paid services to find trusted dog walkers or sitters, ensuring your furry friend gets the care they deserve.
-        </p>
+      <div class="Dropdown">
+        <button :onClick="Button3" class="dropbtn">3) How much does our app cost</button>
+        <div id="Description_3" class="Dropdown_Contents">
+          <p>
+            <b>Absolutely free!</b>
+            Enjoy our app's full functionality without any charges. Plus, take advantage of our convenient paid services to find trusted dog walkers or sitters, ensuring your furry friend gets the care they deserve.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="Dropdown">
-      <button :onClick="Button4" class="dropbtn">4) How it works</button>
-      <div id="Description_4" class="Dropdown_Contents-alt">
-        <ul>
-          <li>
-            <h>• Swipe Left or Right</h>
-            <p class="ml5 smallerfont">
-              - Swipe
-              <b>left</b>
-              to dislike a profile
-            </p>  
-            <p class="ml5 smallerfont">
-              - Swipe
-              <b>right</b>
-              to like a profile
-            </p>
-          </li>
-          <li>
-            <h>• Tap to open Profile</h>
-            <p class="ml5 smallerfont">- If you're interested in knowing more about a profile, tap on the right side of the profile card.</p>
-            <p class="ml5 smallerfont">- This action will open up the detailed profile where you can view more information about the user and their dog.</p>
-          </li>
-          <li>
-            <h>• Navigation</h>
-            <p class="ml5 smallerfont">- Use the navigation bar or menu options to explore additional features such as searching for specific dog breeds, adjusting your preferences, or accessing messaging features.</p>
-          </li>
-          <li>
-            <h>• Matching</h>
-            <p class="ml5 smallerfont">- If both you and another user swipe right on each other's profiles, it's a match! You can then start messaging each other and plan a playdate for your dogs.</p>
-          </li>
-          <li>
-            <h>• Doggy Dates</h>
-            <p class="ml5 smallerfont">- Once you've connected with other dog owners, you can arrange meetups at local dog parks or other pet-friendly locations through the app's messaging or event planning features.</p>
-          </li>
-        </ul>
+      <div class="Dropdown">
+        <button :onClick="Button4" class="dropbtn">4) How it works</button>
+        <div id="Description_4" class="Dropdown_Contents-alt">
+          <ul>
+            <li>
+              <h>• Swipe Left or Right</h>
+              <p class="ml5 smallerfont">
+                - Swipe
+                <b>left</b>
+                to dislike a profile
+              </p>
+              <p class="ml5 smallerfont">
+                - Swipe
+                <b>right</b>
+                to like a profile
+              </p>
+            </li>
+            <li>
+              <h>• Tap to open Profile</h>
+              <p class="ml5 smallerfont">- If you're interested in knowing more about a profile, tap on the right side of the profile card.</p>
+              <p class="ml5 smallerfont">- This action will open up the detailed profile where you can view more information about the user and their dog.</p>
+            </li>
+            <li>
+              <h>• Navigation</h>
+              <p class="ml5 smallerfont">- Use the navigation bar or menu options to explore additional features such as searching for specific dog breeds, adjusting your preferences, or accessing messaging features.</p>
+            </li>
+            <li>
+              <h>• Matching</h>
+              <p class="ml5 smallerfont">- If both you and another user swipe right on each other's profiles, it's a match! You can then start messaging each other and plan a playdate for your dogs.</p>
+            </li>
+            <li>
+              <h>• Doggy Dates</h>
+              <p class="ml5 smallerfont">- Once you've connected with other dog owners, you can arrange meetups at local dog parks or other pet-friendly locations through the app's messaging or event planning features.</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 .daddy {
-background-size: 100vw 100vh;
-background-image: url(https://www.dogsensepa.com/sites/default/files/styles/large/public/2019-12/image1%20%2891%29.png?itok=TslytPOT);
-background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-image: url();
+  background-repeat: no-repeat;
 }
 .FAQs {
   margin: auto;
