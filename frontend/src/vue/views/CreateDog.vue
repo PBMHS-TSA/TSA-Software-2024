@@ -49,24 +49,23 @@
       <div class="form-group characteristics-container">
         <label for="characteristics">Select up to 7 Characteristics:</label>
         <div class="characteristics">
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Friendly</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Energetic</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Lone Wolf</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Toy Shredder</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Couch Potato</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Loyal</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Curious</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Adventurous</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Playful</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Intelligent</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Lazy</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Stubborn</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Brave</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Calm</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Affectionate</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Sociable</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Reserved</div>
-          <div class="characteristic" onclick="toggleCharacteristic(this)">Eager to Please</div>
+          <div class="characteristic" :onclick="toggletrait">Friendly</div>
+          <div class="characteristic" :onclick="toggletrait">Energetic</div>
+          <div class="characteristic" :onclick="toggletrait">Lone Wolf</div>
+          <div class="characteristic" :onclick="toggletrait">Toy Shredder</div>
+          <div class="characteristic" :onclick="toggletrait">Couch Potato</div>
+          <div class="characteristic" :onclick="toggletrait">Loyal</div>
+          <div class="characteristic" :onclick="toggletrait">Adventurous</div>
+          <div class="characteristic" :onclick="toggletrait">Playful</div>
+          <div class="characteristic" :onclick="toggletrait">Curious</div>
+          <div class="characteristic" :onclick="toggletrait">Intelligent</div>
+          <div class="characteristic" :onclick="toggletrait">Lazy</div>
+          <div class="characteristic" :onclick="toggletrait">Stubborn</div>
+          <div class="characteristic" :onclick="toggletrait">Brave</div>
+          <div class="characteristic" :onclick="toggletrait">Calm</div>
+          <div class="characteristic" :onclick="toggletrait">Affectionate</div>
+          <div class="characteristic" :onclick="toggletrait">Sociable</div>
+          <div class="characteristic" :onclick="toggletrait">Reserved</div>
         </div>
         <div class="characteristics-message" id="characteristicsMessage"></div>
       </div>
@@ -105,9 +104,9 @@ export default {
     goBack() {
       window.history.back();
     },
-    toggleCharacteristic(element) {
+    toggletrait(element) {
       element.classList.toggle("selected");
-      updateCharacteristicsMessage();
+      this.updateCharacteristicsMessage();
     },
 
     updateCharacteristicsMessage() {
