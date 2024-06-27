@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <img style="position: absolute; opacity: 0.3; width: 100vw; height: 100vh; z-index: -10000;" src="https://www.dogsensepa.com/sites/default/files/styles/large/public/2019-12/image1%20%2891%29.png?itok=TslytPOT" />
+    <img style="position: absolute; opacity: 0.3; width: 98.9322884877522vw; height: 100vh; z-index: -10000;" src="https://www.dogsensepa.com/sites/default/files/styles/large/public/2019-12/image1%20%2891%29.png?itok=TslytPOT" />
     <h1 class="home-header">Snout Social</h1>
     <div class="Overview">Connect Fido with furry friends! Our app pairs your pup with compatible companions and locates nearby animal-friendly parks for playful adventures. Because every dog deserves a buddy to wag tails with!</div>
 

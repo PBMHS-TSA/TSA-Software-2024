@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="mainst">PROFILE</h2>
 
-    <div class="profile-section">
+    <div class="profile-section" style="display:contents;">
       <div class="user-info" style="display: flex">
         <img src="../assets/jaxon/profilepic.png" alt="User Picture" class="profile-pic" />
         <div class="dog-info" >

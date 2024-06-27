@@ -15,7 +15,7 @@
     </div>
   </nav>
   <div style="margin-top: 5%">
-    <router-view />
+    <router-view /> 
   </div>
 </template>
 <script>
