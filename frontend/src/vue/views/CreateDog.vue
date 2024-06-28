@@ -30,9 +30,9 @@
       </div>
 
       <div class="form-group">
-        <label for="breed">Breed:</label>
+        <label for="breed">Breed:</label> 
         <select id="breed" name="breed" class="breed-dropdown" style="width: 100%">
-          <option :v-for="dogbreed in this.breeds.value" :value="dogbreed">{{ dogbreed }}</option>
+          <option :v-for="dogbreed in breeds.value" :value="dogbreed">{{ dogbreed }}</option>
         </select>
       </div>
 
