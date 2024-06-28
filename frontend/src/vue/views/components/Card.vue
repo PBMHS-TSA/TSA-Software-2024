@@ -19,7 +19,6 @@
       <h2>{{ owner.name }}</h2>
       <p>Age: {{ owner.age }} Years</p>
       <p>Distance: {{ distance }} Miles</p>
-      <p>Description: {{ description }}</p>
     </div>
   </div>
 </template>

@@ -17,7 +17,7 @@ import {dogbreeds,getAge,dognames,getBreed,getGender,getImage,getMiles,getName,g
 export default {
   data() {
     return {
-      amount: 5, // Math.floor(Math.random() * 5) + 1,
+      amount: 30, // Math.floor(Math.random() * 5) + 1,
       dogs: [],
     };
   },

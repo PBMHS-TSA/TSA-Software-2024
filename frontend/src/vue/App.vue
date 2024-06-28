@@ -13,6 +13,7 @@
 
         <li><router-link to="/chat/1">Messages</router-link></li>
         <li><router-link to="/map">Map</router-link></li>
+        <li><router-link to="/createdog">Add Dog</router-link></li>
 
         <li><a :onclick="logout">Logout</a></li>
       </ul>
