@@ -54,12 +54,6 @@ export default {
     createMap() {
       document.getElementById("map-selector").classList.toggle("disabled");
     },
-    getRandomResponse(index) {
-      const responses = ["Hello!", "Good! How about you?", "Thats Good! Where do you want to meet up?"];
-
-      return responses[index];
-    },
-
     sendMessage() {
       if (!window.index) {
         window.index = 0;
@@ -77,12 +71,12 @@ export default {
 
         messageInput.value = "";
 
-        setTimeout(() => {
-          const receivedMessageElement = document.createElement("div");
-          receivedMessageElement.classList.add("message", "received");
-          receivedMessageElement.innerHTML = `<p>${getRandomResponse(window.index++)}</p>`;
-          chatMessages.appendChild(receivedMessageElement);
-        }, 1000);
+        // setTimeout(() => {
+        //   const receivedMessageElement = document.createElement("div");
+        //   receivedMessageElement.classList.add("message", "received");
+        //   receivedMessageElement.innerHTML = `<p>${getRandomResponse(window.index++)}</p>`;
+        //   chatMessages.appendChild(receivedMessageElement);
+        // }, 1000);
       }
     },
   },
