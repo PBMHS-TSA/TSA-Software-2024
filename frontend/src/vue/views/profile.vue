@@ -17,7 +17,7 @@
         <h3>User Posts</h3>
         <!--<post id="posts" :for="post in posts" :postContent="post.postContent" :postImage="post.postImage"></post>-->
 
-        <post :postContent="'Jaxon looking at a car'" :postImage="'/src/vue/assets/jaxon/profilepic.png'"></post>
+        <post :postContent="'Jaxon looking at a car'" :postImage="'https://i.ibb.co/pwz8KSz/profilepic.jpg'"></post>
       </div>
     </div>
   </div>
