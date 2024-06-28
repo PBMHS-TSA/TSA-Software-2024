@@ -28,7 +28,7 @@
 </template>
 <style>
 .map-selector.disabled {
-display:none !important
+display:none !important;
 }
 .map-selector {
   position:absolute;
