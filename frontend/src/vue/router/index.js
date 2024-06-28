@@ -6,16 +6,22 @@ import profile from "../views/profile.vue";
 import { CredentialManager, socket } from "../../globals";
 import Map from "../views/components/Map.vue";
 import CD from "../views/CreateDog.vue";
+import MV from "../views/MobileView.vue"
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    {
+      path: "/mobileview",
+      name: "MobileView",
+      component: MV,
+    },
     {
       path: "/createdog",
       name: "Create Dog",
       component: CD,
     },
     {
-      path: "/:profile",
+      path: "/profile",
       name: "Prfile",
       component: profile,
     },

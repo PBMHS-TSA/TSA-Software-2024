@@ -1,7 +1,9 @@
 <template>
   <div :id="'user' + id" class="usercard">
     <div :ondragover="swipemobile" class="card" :id="'card' + linenumber" :style="'display:' + (linenumber == 0 ? 'block' : 'none;')">
-      <router-link :to="'/chat/'+id"><div class="card-message"><span class="large material-icons" >chat</span></div></router-link>
+      <router-link :to="'/chat/' + id">
+        <div class="card-message"><span class="large material-icons" style="color: WHITE">chat</span></div>
+      </router-link>
       <!--:ondragover="swipemobile"-->
       <img :alt="'Dog' + id" :src="dogimage" />
       <h2>{{ name }}</h2>

@@ -249,4 +249,43 @@ const dognames = [
   "Zeke",
   "Zip",
 ];
-export { dogbreeds, dognames };
+async function  getImage(breed) {
+  const response = await fetch("https://dog.ceo/api/breed/" + breed + "/images/random");
+  const json = await response.json();
+  return await json.message;
+}
+async function  getOwner() {
+  const response = await fetch("https://randommer.io/Name/?type=fullname&number=1&X-Requested-With=XMLHttpRequest", { method: "POST" });
+  const json = await response.json();
+
+  let owner = {
+    name: json[0],
+    age: Math.floor(Math.random() * (80 - 18 + 1)) + 18
+  };
+  return owner;
+}
+async function  getMiles() {
+  // Generate a random number between 0 and 10 with decimals
+  var randomNumber = Math.random() * 6;
+  console.log(randomNumber); // Output a random number between 0 and 10 (exclusive)
+
+  // If you want to limit the number of decimal places, you can use toFixed() method
+  var decimalPlaces = 2;
+  var roundedRandomNumber = randomNumber.toFixed(decimalPlaces);
+  console.log(roundedRandomNumber); // Output a random number with 2 decimal places
+  return roundedRandomNumber;
+}
+async function  getAge(int) {
+  return Math.floor(Math.random() * int) + 1;
+}
+async function  getName() {
+  return dognames[Math.floor(Math.random() * dognames.length)];
+}
+async function  getBreed() {
+  return dogbreeds[Math.floor(Math.random() * dogbreeds.length)];
+}
+async function  getGender() {
+  let math =  Math.floor(Math.random() * 13) + 1;
+  return (math == 1 ? "Male" :"Female")
+}
+export { dogbreeds, dognames,getBreed,getGender,getName,getAge,getImage,getMiles,getOwner};
