@@ -83,7 +83,7 @@
 <script>
 import { dogbreeds } from "./helper.js";
 import {ref} from "vue"
-const breeds = ref([])
+var breeds = ref([])
 breeds.value=dogbreeds
 $(document).ready(function () {
   $("#breed").select2({
