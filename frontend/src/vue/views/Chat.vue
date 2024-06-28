@@ -83,5 +83,8 @@ export default {
   components: {
     Map,
   },
+  props: {
+    id: Number
+  }
 };
 </script>

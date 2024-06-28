@@ -34,6 +34,7 @@ const router = createRouter({
       path: "/chat/:id",
       name: "Chat",
       component: chat,
+      props:true
     },
     {
       path: "/mf",
