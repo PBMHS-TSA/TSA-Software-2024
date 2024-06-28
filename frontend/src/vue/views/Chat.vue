@@ -27,7 +27,7 @@
   </div>
 </template>
 <style>
-.map-selector.disabled {
+#map-selector.disabled {
 display:none !important;
 }
 .map-selector {
