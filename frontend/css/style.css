@@ -448,7 +448,7 @@ this is stuff from kyle's css file
   }
   
   .characteristic {
-    background-color: #4caf50; /* Green background color */
+    background-color: #4c4c4c; /* Green background color */
     color: white;
     padding: 8px 12px;
     border-radius: 20px;
@@ -457,6 +457,11 @@ this is stuff from kyle's css file
   }
   
   .characteristic:hover {
+    background-color: #424242;
+  }
+  .characteristic.selected:hover {
     background-color: #45a049;
   }
-  
+  .characteristic.selected {
+    background-color: #4caf50;
+  }

@@ -10,7 +10,7 @@
       <label for="dog-image" class="add-image-label">Add Profile Picture</label>
     </div>
 
-    <form action="submit_profile.php" method="post" enctype="multipart/form-data" class="card">
+    <form action="submit_profile.php" method="post" enctype="multipart/form-data" class="card" style="width:100%">
       <div class="form-group">
         <label for="dog-name">Dog Name:</label>
         <input type="text" id="dog-name" name="dog-name" required />
@@ -32,7 +32,7 @@
       <div class="form-group">
         <label for="breed">Breed:</label>
         <select id="breed" name="breed" class="breed-dropdown" style="width: 100%">
-          <option :for="dogbreed in dogbreeds" :value="dogbreed">{{ dogbreed }}</option>
+          <option :v-for="dogbreed in this.breeds.value" :value="dogbreed">{{ dogbreed }}</option>
         </select>
       </div>
 
@@ -82,6 +82,9 @@
 </template>
 <script>
 import { dogbreeds } from "./helper.js";
+import {ref} from "vue"
+const breeds = ref([])
+breeds.value=dogbreeds
 $(document).ready(function () {
   $("#breed").select2({
     tags: true,
@@ -97,7 +100,7 @@ $(document).ready(function () {
 export default {
   data() {
     return {
-      dogbreeds: dogbreeds,
+      dogbeeds: dogbreeds,
     };
   },
   methods: {
@@ -105,7 +108,8 @@ export default {
       window.history.back();
     },
     toggletrait(element) {
-      element.classList.toggle("selected");
+    console.log(element);
+      element.target.classList.toggle("selected");
       this.updateCharacteristicsMessage();
     },
 

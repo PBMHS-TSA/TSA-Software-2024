@@ -7,7 +7,7 @@
         <li><router-link to="/profile">Profile</router-link></li>
         <li><router-link to="/mf">Dashboard</router-link></li>
 
-        <li><router-link to="/chats">Messages</router-link></li>
+        <li><router-link to="/chat/1">Messages</router-link></li>
         <li><router-link to="/map">Map</router-link></li>
 
         <li><a :onclick="logout">Logout</a></li>
