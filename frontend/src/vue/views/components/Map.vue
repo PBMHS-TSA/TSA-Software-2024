@@ -22,6 +22,7 @@
   max-height: 80%;
   overflow-y: scroll;
   width: 31.9%;
+  
 }
 .mapitems > div {
   border-top: 1px solid grey;
